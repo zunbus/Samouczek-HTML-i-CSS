@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pl">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Samouczek CSS</title>
+        <link rel="icon" type="image/x-icon" href="../../img/Logo.png">
+        <link rel="stylesheet" href="../../style.css">
+        <style>
+            :root {
+                --MainColor: #1572B6;
+                --SideColor: #125d92;
+                --DarkColor: #0b3a5c;
+            }
+        </style>
+        <script>let type = 0;</script>
+    </head>
+    <body>
+        <header id="header">
+            <ul>
+                <li><a onclick="openMP('../../index.html')" href="#">Strona Główna</a></li>
+                <li><a onclick="openHTML('../HTML/html-intro.html')" href="#">HTML</a></li>
+                <li><a href="#">CSS</a></li>
+            </ul>
+        </header>
+        <main>
+            <nav id="nav">
+                <ul id="subpages">
+                </ul>
+            </nav>
+            <article id="article">
+                <a onclick="showNav()" id="shownavbutton" href="#" style="color: white; background-color: var(--SideColor); padding: 10px; position: fixed; left: 0; border-radius: 0 10px 10px 0;">&gt;</a>
+                <!-- Artykuł poniżej -->
+
+                <h1>Wstęp do CSS</h1>
+
+                <p>
+                    CSS (Cascading Style Sheets) to język służący do opisywania wyglądu stron internetowych. 
+                    Dzięki niemu możliwe jest nadawanie elementom odpowiednich kolorów, rozmiarów, odstępów, 
+                    czcionek oraz układów. HTML odpowiada za strukturę strony, natomiast CSS decyduje o jej 
+                    prezentacji wizualnej.
+                </p>
+
+                <p>
+                    Przed powstaniem CSS strony internetowe były bardzo proste i trudne do estetycznego 
+                    zaprojektowania. Każda zmiana wyglądu wymagała edytowania wielu elementów osobno, co 
+                    znacząco utrudniało tworzenie większych projektów. CSS rozwiązał ten problem poprzez 
+                    oddzielenie treści od warstwy wizualnej. Dzięki temu można zarządzać wyglądem całej strony 
+                    z jednego miejsca.
+                </p>
+
+                <p>
+                    CSS pozwala tworzyć nowoczesne i responsywne interfejsy, które dostosowują się do różnych 
+                    urządzeń &ndash; komputerów, tabletów oraz smartfonów. Za pomocą kilku reguł można zmienić 
+                    układ strony, dodać animacje, efekty przejść lub stworzyć przejrzystą nawigację.
+                </p>
+
+                <p>
+                    Style można dodawać bezpośrednio w elementach HTML, wewnątrz dokumentu lub w osobnych 
+                    plikach .css. Najczęściej stosuje się zewnętrzne pliki stylów, ponieważ ułatwiają one 
+                    organizację kodu i pozwalają wielokrotnie wykorzystywać te same reguły.
+                </p>
+
+                <p>
+                    Współczesne strony internetowe praktycznie nie mogą istnieć bez CSS. To właśnie ten język 
+                    odpowiada za czytelność, estetykę i wygodę korzystania z witryn internetowych. Nauka CSS 
+                    jest jednym z podstawowych kroków w kierunku tworzenia nowoczesnych stron WWW.
+                </p>
+            </article>
+        </main>
+        <footer id="footer">
+            &copy; Hubert Filas 2026 &ndash; Samouczek HTML i CSS<br>
+            Źródła: Własne
+        </footer>
+        <script src="../../script.js"></script>
+    </body>
+</html>

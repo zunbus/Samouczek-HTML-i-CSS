@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pl">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Samouczek HTML i CSS</title>
+        <link rel="icon" type="image/x-icon" href="img/Logo.png">
+        <link rel="stylesheet" href="style.css">
+        <style>
+            :root {
+                --MainColor: #7C5BA6;
+                --SideColor: #B497D6;
+                --DarkColor: #7C5BA6;
+            }
+
+            nav {
+                width: 0;
+            }
+
+            article {
+                width: 100%;
+            }
+        </style>
+    </head>
+    <body>
+        <header id="header">
+            <ul>
+                <li><a href="#">Strona Główna</a></li>
+                <li><a onclick="openHTML('cite/HTML/html-intro.html')" href="#">HTML</a></li>
+                <li><a onclick="openCSS('cite/CSS/css-intro.html')" href="#">CSS</a></li>
+            </ul>
+        </header>
+        <main>
+            <nav id="nav"></nav>
+            <article style="text-align: center;" id="article">
+                <img alt="logo strony" src="img/Logo.png" width="100">
+                <h1>Samouczek HTML i CSS</h1>
+                <p>HTML i CSS to podstawowe technologie wykorzystywane do tworzenia stron internetowych. Praktycznie każda strona, którą odwiedzasz w internecie &ndash; od prostych blogów po rozbudowane platformy jak YouTube, Wikipedia czy sklepy internetowe &ndash; korzysta właśnie z tych dwóch języków.</p>
+                <p>HTML odpowiada za strukturę strony. To dzięki niemu przeglądarka wie, gdzie znajduje się nagłówek, tekst, obraz, przycisk czy lista. Można powiedzieć, że HTML tworzy „szkielet” strony internetowej.</p>
+                <p>CSS zajmuje się wyglądem. Odpowiada za kolory, układ elementów, czcionki, animacje oraz dostosowanie strony do różnych urządzeń. Bez CSS większość stron wyglądałaby jak zwykły dokument tekstowy.</p>
+                <p>Według danych W3Techs technologie HTML i CSS są wykorzystywane przez niemal 100% wszystkich stron internetowych, ponieważ są one standardem działania współczesnej sieci. Każda nowoczesna przeglądarka &ndash; Chrome, Firefox, Safari czy Edge &ndash; obsługuje je natywnie.</p>
+                <p>Znajomość HTML i CSS to pierwszy krok do świata web developmentu. To fundament, na którym buduje się nowoczesne aplikacje internetowe, sklepy online, portfolio, blogi oraz systemy używane codziennie przez miliony ludzi.</p>
+            </article>
+        </main>
+        <footer id="footer">
+            &copy; Hubert Filas 2026 &ndash; Samouczek HTML i CSS<br>
+            Źródła: Własne
+        </footer>
+        <script src="script.js"></script>
+    </body>
+</html>

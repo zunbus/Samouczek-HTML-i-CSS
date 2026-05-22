@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pl">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Samouczek HTML</title>
+        <link rel="icon" type="image/x-icon" href="../../img/Logo.png">
+        <link rel="stylesheet" href="../../style.css">
+        <style>
+            :root {
+                --MainColor: #E34F26;
+                --SideColor: #a73a1b;
+                --DarkColor: #772914;
+            }
+        </style>
+        <script>let type = 1;</script>
+    </head>
+    <body>
+        <header id="header">
+            <ul>
+                <li><a onclick="openMP('../../index.html')" href="#">Strona Główna</a></li>
+                <li><a href="#">HTML</a></li>
+                <li><a onclick="openCSS('../CSS/css-intro.html')" href="#">CSS</a></li>
+            </ul>
+        </header>
+        <main>
+            <nav id="nav">
+                <ul id="subpages">
+                </ul>
+            </nav>
+            <article id="article">
+                <a onclick="showNav()" id="shownavbutton" href="#" style="color: white; background-color: var(--SideColor); padding: 10px; position: fixed; left: 0; border-radius: 0 10px 10px 0;">&gt;</a>
+                <!-- Artykuł poniżej -->
+
+                <h1>Wstęp do HTML</h1>
+
+                <p>
+                    HTML (HyperText Markup Language) to podstawowy język wykorzystywany do tworzenia stron 
+                    internetowych. Odpowiada on za strukturę i zawartość witryny, czyli wszystkie elementy, 
+                    które pojawiają się na ekranie użytkownika. To właśnie dzięki HTML możliwe jest dodawanie 
+                    nagłówków, tekstów, obrazów, tabel, formularzy oraz odnośników.
+                </p>
+
+                <p>
+                    Strona internetowa bez HTML praktycznie nie mogłaby istnieć. Każda witryna, niezależnie 
+                    od stopnia zaawansowania, opiera się na znacznikach HTML, które informują przeglądarkę, 
+                    w jaki sposób wyświetlić poszczególne elementy. Przeglądarka analizuje kod i zamienia go 
+                    na widoczną stronę internetową.
+                </p>
+
+                <p>
+                    HTML działa w oparciu o znaczniki, nazywane również tagami. Większość z nich posiada 
+                    znacznik otwierający oraz zamykający (więcej o tym w "Znaczniki"). Dzięki nim można tworzyć uporządkowaną strukturę 
+                    dokumentu, dzielić treść na sekcje i określać znaczenie poszczególnych elementów.
+                </p>
+
+                <p>
+                    Sam HTML odpowiada głównie za zawartość strony, dlatego często współpracuje z innymi 
+                    technologiami. CSS zajmuje się wyglądem witryny, natomiast JavaScript dodaje interaktywność 
+                    i dynamiczne funkcje. Połączenie tych trzech technologii stanowi podstawę nowoczesnego 
+                    tworzenia stron internetowych.
+                </p>
+
+                <p>
+                    HTML jest stosunkowo prosty do nauki, dlatego bardzo często stanowi pierwszy krok w nauce 
+                    web developmentu. Poznanie podstaw tego języka pozwala zrozumieć, w jaki sposób działają 
+                    strony internetowe i jak budowana jest ich struktura.
+                </p>
+            </article>
+        </main>
+        <footer id="footer">
+            &copy; Hubert Filas 2026 &ndash; Samouczek HTML i CSS<br>
+            Źródła: Własne
+        </footer>
+        <script src="../../script.js"></script>
+    </body>
+</html>
