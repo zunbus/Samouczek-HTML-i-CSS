@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="pl">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Samouczek HTML</title>
+        <link rel="icon" type="image/x-icon" href="../../img/Logo.png">
+        <link rel="stylesheet" href="../../style.css">
+        <style>
+            :root {
+                --MainColor: #E34F26;
+                --SideColor: #a73a1b;
+                --DarkColor: #772914;
+            }
+
+        </style>
+        <!-- Highlight.js Theme -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
+        <script>let type = 1;</script>
+    </head>
+    <body>
+        <header id="header">
+            <ul>
+                <li><a onclick="openMP('../../index.html')" href="#">Strona Główna</a></li>
+                <li><a href="#">HTML</a></li>
+                <li><a onclick="openCSS('../CSS/css-intro.html')" href="#">CSS</a></li>
+            </ul>
+        </header>
+        <main>
+            <nav id="nav">
+                <ul id="subpages">
+                </ul>
+            </nav>
+            <article id="article">
+                <a onclick="showNav()" id="shownavbutton" href="#" style="color: white; background-color: var(--SideColor); padding: 10px; position: fixed; left: 0; border-radius: 0 10px 10px 0;">&gt;</a>
+                <!-- Artykuł poniżej -->
+
+                <h1>Tabele</h1>
+                <p>
+                    Tabela w HTML pozwala przedstawić dane w wierszach i kolumnach.
+                    Składa się z nagłówków, wierszy oraz komórek, a także opcjonalnych sekcji ułatwiających organizację.
+                </p>
+
+                <h2>&lt;table&gt;</h2>
+                <p>
+                    Podstawowy kontener tabeli to <code>&lt;table&gt;</code>. Wewnątrz umieszczamy wiersze <code>&lt;tr&gt;</code>, komórki nagłówkowe <code>&lt;th&gt;</code> oraz komórki danych <code>&lt;td&gt;</code>.
+                </p>
+                <div class="example-grid">
+                    <div class="example-box example-code">
+                        <h3>Kod</h3>
+                        <pre><code class="language-html">&lt;table&gt;
+  &lt;tr&gt;
+    &lt;th&gt;Produkt&lt;/th&gt;
+    &lt;th&gt;Cena&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Jabłka&lt;/td&gt;
+    &lt;td&gt;5 zł&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+                    </div>
+                    <div class="example-box example-result">
+                        <h3>Wynik</h3>
+                        <table>
+                            <tr>
+                                <th>Produkt</th>
+                                <th>Cena</th>
+                            </tr>
+                            <tr>
+                                <td>Jabłka</td>
+                                <td>5 zł</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+
+                <h2>&lt;caption&gt;, &lt;thead&gt;, &lt;tbody&gt; i &lt;tfoot&gt;</h2>
+                <p>
+                    <code>&lt;caption&gt;</code> opisuje tabelę, a <code>&lt;thead&gt;</code>, <code>&lt;tbody&gt;</code> i <code>&lt;tfoot&gt;</code> pomagają podzielić tabelę na sekcje: nagłówek, ciało i stopkę.
+                </p>
+                <div class="example-grid">
+                    <div class="example-box example-code">
+                        <h3>Kod</h3>
+                        <pre><code class="language-html">&lt;table&gt;
+  &lt;caption&gt;Cennik&lt;/caption&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Usługa&lt;/th&gt;
+      &lt;th&gt;Cena&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Strona WWW&lt;/td&gt;
+      &lt;td&gt;200 zł&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+  &lt;tfoot&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Razem&lt;/td&gt;
+      &lt;td&gt;200 zł&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tfoot&gt;
+&lt;/table&gt;</code></pre>
+                    </div>
+                    <div class="example-box example-result">
+                        <h3>Wynik</h3>
+                        <table>
+                            <caption>Cennik</caption>
+                            <thead>
+                                <tr>
+                                    <th>Usługa</th>
+                                    <th>Cena</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Strona WWW</td>
+                                    <td>200 zł</td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td>Razem</td>
+                                    <td>200 zł</td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </div>
+
+                <h2>&lt;colgroup&gt; i &lt;col&gt;</h2>
+                <p>
+                    <code>&lt;colgroup&gt;</code> z <code>&lt;col&gt;</code> pozwalają zdefiniować grupy kolumn i ich właściwości, na przykład szerokość lub styl.
+                </p>
+                <div class="example-grid">
+                    <div class="example-box example-code">
+                        <h3>Kod</h3>
+                        <pre><code class="language-html">&lt;table&gt;
+  &lt;colgroup&gt;
+    &lt;col style="width: 70%;"&gt;
+    &lt;col style="width: 30%;"&gt;
+  &lt;/colgroup&gt;
+  &lt;tr&gt;
+    &lt;th&gt;Nazwa&lt;/th&gt;
+    &lt;th&gt;Wartość&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Kurs&lt;/td&gt;
+    &lt;td&gt;500&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+                    </div>
+                    <div class="example-box example-result">
+                        <h3>Wynik</h3>
+                        <table>
+                            <colgroup>
+                                <col style="width: 70%;">
+                                <col style="width: 30%;">
+                            </colgroup>
+                            <tr>
+                                <th>Nazwa</th>
+                                <th>Wartość</th>
+                            </tr>
+                            <tr>
+                                <td>Kurs</td>
+                                <td>500</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+
+                <h2>Zagnieżdżone tabele</h2>
+                <p>
+                    Tabela może zawierać inną tabelę w jednej z komórek. To przydatne przy złożonych zestawieniach, ale warto stosować to oszczędnie.
+                </p>
+                <div class="example-grid">
+                    <div class="example-box example-code">
+                        <h3>Kod</h3>
+                        <pre><code class="language-html">&lt;table&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Nazwa&lt;/td&gt;
+    &lt;td&gt;
+      &lt;table&gt;
+        &lt;tr&gt;
+          &lt;td&gt;Podpunkt 1&lt;/td&gt;
+        &lt;/tr&gt;
+      &lt;/table&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+                    </div>
+                    <div class="example-box example-result">
+                        <h3>Wynik</h3>
+                        <table>
+                            <tr>
+                                <td>Nazwa</td>
+                                <td>
+                                    <table>
+                                        <tr>
+                                            <td>Podpunkt 1</td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+
+                <p>
+                    Tabele najlepiej stosować do prezentacji danych w formie siatki, a nie do układu strony.
+                    Znaczniki takie jak <code>&lt;caption&gt;</code>, <code>&lt;thead&gt;</code>, <code>&lt;tbody&gt;</code>, <code>&lt;tfoot&gt;</code>, <code>&lt;colgroup&gt;</code> i <code>&lt;col&gt;</code> pomagają zachować strukturę i poprawić czytelność.
+                </p>
+            </article>
+        </main>
+        <footer id="footer">
+            &copy; Hubert Filas 2026 &ndash; Samouczek HTML i CSS<br>
+            Źródła: Własne
+        </footer>
+        <script src="../../script.js"></script>
+        <!-- Highlight.js -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+        <script>
+            hljs.highlightAll();
+        </script>
+    </body>
+</html>

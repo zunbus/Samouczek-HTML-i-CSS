@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pl">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Samouczek CSS</title>
+        <link rel="icon" type="image/x-icon" href="../../img/Logo.png">
+        <link rel="stylesheet" href="../../style.css">
+        <style>
+            :root {
+                --MainColor: #1572B6;
+                --SideColor: #125d92;
+                --DarkColor: #0b3a5c;
+            }
+        </style>
+        <script>let type = 0;</script>
+        <!-- Highlight.js Theme -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
+    </head>
+    <body>
+        <header id="header">
+            <ul>
+                <li><a onclick="openMP('../../index.html')" href="#">Strona Główna</a></li>
+                <li><a onclick="openHTML('../HTML/html-intro.html')" href="#">HTML</a></li>
+                <li><a href="#">CSS</a></li>
+            </ul>
+        </header>
+        <main>
+            <nav id="nav">
+                <ul id="subpages">
+                </ul>
+            </nav>
+            <article id="article">
+                <a onclick="showNav()" id="shownavbutton" href="#" style="color: white; background-color: var(--SideColor); padding: 10px; position: fixed; left: 0; border-radius: 0 10px 10px 0;">&gt;</a>
+                <!-- Artykuł poniżej -->
+
+                <h1>Pudełkowy model CSS</h1>
+                <p>
+                    W CSS każdy element jest traktowany jak pudełko. Pudełkowy model składa się z zawartości, paddingu, obramowania i marginesu.
+                </p>
+                <h2>Co zawiera pudełko?</h2>
+                <p>
+                    Pudełko składa się z:
+                    <ul>
+                        <li>zawartości (<code>content</code>)</li>
+                        <li>wewnętrznego odstępu (<code>padding</code>)</li>
+                        <li>obramowania (<code>border</code>)</li>
+                        <li>zewnętrznego odstępu (<code>margin</code>)</li>
+                    </ul>
+                </p>
+                <h2>padding</h2>
+                <p>Padding to wewnętrzny odstęp między zawartością a obramowaniem elementu.</p>
+                <div class="example-grid">
+                    <div class="example-box example-code">
+                        <h3>Kod</h3>
+                        <pre><code class="language-css">div {
+  padding: 20px;
+  border: 1px solid #125d92;
+}</code></pre>
+                    </div>
+                    <div class="example-box example-result t" style="padding:20px; border:1px solid #125d92;">
+                        <h3>Wynik</h3>
+                        <p>To pudełko ma padding 20px.</p>
+                    </div>
+                </div>
+                <h2>border</h2>
+                <p>Border to obramowanie otaczające padding i zawartość.</p>
+                <div class="example-grid">
+                    <div class="example-box example-code">
+                        <h3>Kod</h3>
+                        <pre><code class="language-css">div {
+  border: 4px dashed #1572B6;
+  padding: 10px;
+}</code></pre>
+                    </div>
+                    <div class="example-box example-result t" style="border:4px dashed #1572B6; padding:10px;">
+                        <h3>Wynik</h3>
+                        <p>Obramowanie jest częścią pudełka wokół zawartości.</p>
+                    </div>
+                </div>
+                <h2>margin</h2>
+                <p>Margin to zewnętrzny odstęp między pudełkami elementów.</p>
+                <div class="example-grid">
+                    <div class="example-box example-code">
+                        <h3>Kod</h3>
+                        <pre><code class="language-css">div {
+  margin: 20px;
+  padding: 10px;
+  border: 1px solid #125d92;
+}</code></pre>
+                    </div>
+                    <div class="example-box example-result t" style="margin:20px; padding:10px; border:1px solid #125d92;">
+                        <h3>Wynik</h3>
+                        <p>Ten element ma zewnętrzny margines 20px.</p>
+                    </div>
+                </div>
+                <h2>width i height</h2>
+                <p>Właściwości <code>width</code> i <code>height</code> określają rozmiar zawartości, a nie całego pudełka, jeśli nie użyto <code>box-sizing</code>.</p>
+                <div class="example-grid">
+                    <div class="example-box example-code">
+                        <h3>Kod</h3>
+                        <pre><code class="language-css">div {
+  width: 300px;
+  height: 80px;
+  padding: 10px;
+  border: 2px solid #125d92;
+}</code></pre>
+                    </div>
+                    <div class="example-box example-result t" style="width:300px; height:80px; padding:10px; border:2px solid #125d92;">
+                        <h3>Wynik</h3>
+                        <p>Rozmiar zawartości wynosi 300x80px; padding i border dodają się do całości.</p>
+                    </div>
+                </div>
+                <h2>box-sizing</h2>
+                <p>
+                    <code>box-sizing</code> zmienia sposób obliczania szerokości i wysokości. Wartość <code>border-box</code> sprawia, że padding i border mieszczą się w zadanym rozmiarze.
+                </p>
+                <div class="example-grid">
+                    <div class="example-box example-code">
+                        <h3>Kod</h3>
+                        <pre><code class="language-css">div {
+  box-sizing: border-box;
+  width: 150px;
+  padding: 10px;
+  border: 2px solid #125d92;
+}</code></pre>
+                    </div>
+                    <div class="example-box example-result t" style="box-sizing:border-box; width:150px; padding:10px; border:2px solid #125d92;">
+                        <h3>Wynik</h3>
+                        <p>Zadany wymiar 150px obejmuje już padding i border.</p>
+                    </div>
+                </div>
+            </article>
+        </main>
+        <footer id="footer">
+            &copy; Hubert Filas 2026 &ndash; Samouczek HTML i CSS<br>
+            Źródła: Własne
+        </footer>
+        <script src="../../script.js"></script>
+        <!-- Highlight.js -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+        <script>
+            hljs.highlightAll();
+        </script>
+    </body>
+</html>

@@ -1,15 +1,71 @@
 const HTMLpages = [
-    {
-        title: "Wstęp",
-        link: "#"
-    },
+  {
+    title: "Wstęp",
+    link: "html-intro.html"
+  },
+  {
+    title: "Ważne Definicje",
+    link: "Definitions.html"
+  },
+  {
+    title: "Podstawowe Znaczniki",
+    link: "BasicTags.html"
+  },
+  {
+    title: "Podstawowa struktura pliku",
+    link: "BasicStructure.html"
+  },
+  {
+    title: "Znaczniki Stylistyczne",
+    link: "StyleTags.html"
+  },
+  {
+    title: "Listy",
+    link: "lists.html"
+  },
+  {
+    title: "Tabele",
+    link: "tables.html"
+  },
+  {
+    title: "Odnośniki i kotwice",
+    link: "a.html"
+  },
+  {
+    title: "Mapy odsyłaczy",
+    link: "map.html"
+  },
+  {
+    title: "Elementy Semantyczne",
+    link: "semantic.html"
+  }
 ];
 
 const CSSpages = [
-    {
-        title: "Wstęp",
-        link: "#"
-    },
+  {
+    title: "Wstęp",
+    link: "css-intro.html"
+  },
+  {
+    title: "Podstawy",
+    link: "Basics.html"
+  },
+  {
+    title: "Formatowanie Tekstu",
+    link: "Text.html"
+  },
+  {
+    title: "Budowa Pudełkowa CSS",
+    link: "Box.html"
+  },
+  {
+    title: "Menu Poziome",
+    link: "Horizontal.html"
+  },
+  {
+    title: "Menu Pionowe",
+    link: "Vertical.html"
+  }
 ];
 
 

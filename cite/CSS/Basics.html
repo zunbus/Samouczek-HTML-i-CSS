@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="pl">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Samouczek CSS</title>
+        <link rel="icon" type="image/x-icon" href="../../img/Logo.png">
+        <link rel="stylesheet" href="../../style.css">
+        <style>
+            :root {
+                --MainColor: #1572B6;
+                --SideColor: #125d92;
+                --DarkColor: #0b3a5c;
+            }
+            #selector-element p {
+                color: #0b3a5c;
+            }
+            .highlighted {
+                font-weight: bold;
+            }
+            #important {
+                background-color: #e8f4ff;
+                padding: 0.3rem;
+            }
+            #selector-descendant span {
+                color: #b83232;
+            }
+            #selector-attr a[href^="https"] {
+                text-decoration: underline dotted;
+                color: black;
+            }
+            #selector-pseudo a{
+                color: black;
+            }
+            #selector-pseudo a:hover {
+                color: #c0392b;
+            }
+            #selector-pseudo-element p::before {
+                content: "» ";
+                color: #555;
+            }
+        </style>
+        <script>let type = 0;</script>
+        <!-- Highlight.js Theme -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
+    </head>
+    <body>
+        <header id="header">
+            <ul>
+                <li><a onclick="openMP('../../index.html')" href="#">Strona Główna</a></li>
+                <li><a onclick="openHTML('../HTML/html-intro.html')" href="#">HTML</a></li>
+                <li><a href="#">CSS</a></li>
+            </ul>
+        </header>
+        <main>
+            <nav id="nav">
+                <ul id="subpages">
+                </ul>
+            </nav>
+            <article id="article">
+                <a onclick="showNav()" id="shownavbutton" href="#" style="color: white; background-color: var(--SideColor); padding: 10px; position: fixed; left: 0; border-radius: 0 10px 10px 0;">&gt;</a>
+                <!-- Artykuł poniżej -->
+
+                <h1>Podstawy CSS</h1>
+                <p>
+                    CSS to język służący do opisu wyglądu stron internetowych. Pozwala oddzielić strukturę HTML od prezentacji, czyli kolorów, czcionek, odstępów i układu elementów.
+                </p>
+                <h2>Do czego służy CSS?</h2>
+                <p>
+                    CSS umożliwia kontrolę stylów na stronie: definiowanie kolorów, rozmiarów, marginesów, obramowań oraz położenia elementów.
+                    Dzięki CSS strona może być bardziej czytelna, estetyczna i dostosowana do różnych urządzeń.
+                </p>
+                <h2>W jakich formach występuje?</h2>
+                <p>
+                    CSS może występować w trzech głównych formach: jako styl wewnętrzny w sekcji <code>&lt;style&gt;</code> w dokumencie HTML, jako styl zewnętrzny w osobnym pliku, lub jako styl wbudowany bezpośrednio w atrybucie elementu.
+                    Najlepszą praktyką jest używanie zewnętrznych arkuszy stylów, ponieważ ułatwia to utrzymanie i ponowne wykorzystanie reguł.
+                </p>
+                <h2>Co zawiera arkusz stylów?</h2>
+                <p>
+                    Arkusz stylów zawiera reguły CSS. Każda reguła składa się z selektora, który wskazuje elementy HTML, oraz deklaracji opisującej właściwości i wartości, np. kolor tła czy układ w siatce.
+                </p>
+                <p>
+                    W arkuszu można także umieścić zmienne CSS, reguły odpowiadające za responsywność, animacje oraz warunkowe style dla różnych rozmiarów ekranu.
+                </p>
+                <h2>Selektory CSS</h2>
+                <p>
+                    Selektory wskazują elementy HTML, które mają otrzymać określone style. Pozwalają wybrać pojedyncze tagi, klasy, identyfikatory, elementy zagnieżdżone oraz elementy pasujące do warunków.
+                </p>
+                <h3>Selektor elementu</h3>
+                <div class="example-grid">
+                    <div class="example-box example-code">
+                        <h3>Kod</h3>
+                        <pre><code class="language-css">#selector-element p {
+  color: #0b3a5c;
+}</code></pre>
+                    </div>
+                    <div class="example-box example-result" id="selector-element">
+                        <h3>Wynik</h3>
+                        <p>To jest paragraf wybrany przez selektor elementu.</p>
+                    </div>
+                </div>
+                <h3>Selektor klasy</h3>
+                <div class="example-grid">
+                    <div class="example-box example-code">
+                        <h3>Kod</h3>
+                        <pre><code class="language-css">.highlighted {
+  font-weight: bold;
+}</code></pre>
+                    </div>
+                    <div class="example-box example-result" id="selector-class">
+                        <h3>Wynik</h3>
+                        <p class="highlighted">Ten tekst jest wyróżniony przez selektor klasy.</p>
+                    </div>
+                </div>
+                <h3>Selektor identyfikatora</h3>
+                <div class="example-grid">
+                    <div class="example-box example-code">
+                        <h3>Kod</h3>
+                        <pre><code class="language-css">#important {
+  background-color: #e8f4ff;
+  padding: 0.3rem;
+}</code></pre>
+                    </div>
+                    <div class="example-box example-result" id="selector-id">
+                        <h3>Wynik</h3>
+                        <p id="important">Styl dotyczy tylko tego elementu z identyfikatorem.</p>
+                    </div>
+                </div>
+                <h3>Selektor potomka</h3>
+                <p>
+                    Selektor potomka wybiera elementy znajdujące się wewnątrz innych elementów. Na przykład <code>div span</code> wybiera wszystkie <code>&lt;span&gt;</code> wewnątrz <code>&lt;div&gt;</code>.
+                </p>
+                <div class="example-grid">
+                    <div class="example-box example-code">
+                        <h3>Kod</h3>
+                        <pre><code class="language-css">#selector-descendant span {
+  color: #b83232;
+}</code></pre>
+                    </div>
+                    <div class="example-box example-result" id="selector-descendant">
+                        <h3>Wynik</h3>
+                        <p>Tekst w <span>spanie</span> wewnątrz bloku.</p>
+                    </div>
+                </div>
+                <h3>Selektor atrybutu</h3>
+                <p>
+                    Selekcja po atrybucie pozwala wybrać elementy, które posiadają dany atrybut, lub mają jego konkretne wartości.
+                </p>
+                <div class="example-grid">
+                    <div class="example-box example-code">
+                        <h3>Kod</h3>
+                        <pre><code class="language-css">#selector-attr a[href^="https"] {
+  text-decoration: underline dotted;
+}</code></pre>
+                    </div>
+                    <div class="example-box example-result" id="selector-attr">
+                        <h3>Wynik</h3>
+                        <p><a href="https://example.com">Bezpieczny link</a></p>
+                    </div>
+                </div>
+                <h3>Pseudoklasy</h3>
+                <p>
+                    Pseudoklasy wybierają elementy w określonym stanie, np. <code>:hover</code> dla najechania kursorem lub <code>:first-child</code> dla pierwszego elementu w grupie.
+                </p>
+                <div class="example-grid">
+                    <div class="example-box example-code">
+                        <h3>Kod</h3>
+                        <pre><code class="language-css">#selector-pseudo a:hover {
+  color: #c0392b;
+}</code></pre>
+                    </div>
+                    <div class="example-box example-result" id="selector-pseudo">
+                        <h3>Wynik</h3>
+                        <p><a href="#">Najedź kursorem</a></p>
+                    </div>
+                </div>
+                <h3>Pseudoelementy</h3>
+                <p>
+                    Pseudoelementy tworzą wirtualną część w treści, np. element przed lub po zawartości bloku.
+                </p>
+                <div class="example-grid">
+                    <div class="example-box example-code">
+                        <h3>Kod</h3>
+                        <pre><code class="language-css">#selector-pseudo-element p::before {
+  content: "» ";
+  color: #555;
+}</code></pre>
+                    </div>
+                    <div class="example-box example-result" id="selector-pseudo-element">
+                        <h3>Wynik</h3>
+                        <p>Ten tekst ma pseudoelement przed sobą.</p>
+                    </div>
+                </div>
+            </article>
+        </main>
+        <footer id="footer">
+            &copy; Hubert Filas 2026 &ndash; Samouczek HTML i CSS<br>
+            Źródła: Własne
+        </footer>
+        <script src="../../script.js"></script>
+        <!-- Highlight.js -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+        <script>
+            hljs.highlightAll();
+        </script>
+    </body>
+</html>

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="pl">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Samouczek CSS</title>
+        <link rel="icon" type="image/x-icon" href="../../img/Logo.png">
+        <link rel="stylesheet" href="../../style.css">
+        <style>
+            :root {
+                --MainColor: #1572B6;
+                --SideColor: #125d92;
+                --DarkColor: #0b3a5c;
+            }
+        </style>
+        <script>let type = 0;</script>
+        <!-- Highlight.js Theme -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
+    </head>
+    <body>
+        <header id="header">
+            <ul>
+                <li><a onclick="openMP('../../index.html')" href="#">Strona Główna</a></li>
+                <li><a onclick="openHTML('../HTML/html-intro.html')" href="#">HTML</a></li>
+                <li><a href="#">CSS</a></li>
+            </ul>
+        </header>
+        <main>
+            <nav id="nav">
+                <ul id="subpages">
+                </ul>
+            </nav>
+            <article id="article">
+                <a onclick="showNav()" id="shownavbutton" href="#" style="color: white; background-color: var(--SideColor); padding: 10px; position: fixed; left: 0; border-radius: 0 10px 10px 0;">&gt;</a>
+                <!-- Artykuł poniżej -->
+
+                <h1>Formatowanie tekstu</h1>
+                <p>
+                    W CSS znajdują się właściwości przeznaczone do kontrolowania wyglądu tekstu. Poniżej zebrano najważniejsze z nich z krótkimi przykładami.
+                </p>
+
+                <h2>font-style</h2>
+                <p>Określa styl czcionki, np. normal lub italic.</p>
+                <div class="example-grid">
+                    <div class="example-box example-code">
+                        <h3>Kod</h3>
+                        <pre><code class="language-css">p { font-style: italic; }</code></pre>
+                    </div>
+                    <div class="example-box example-result t">
+                        <h3>Wynik</h3>
+                        <p style="font-style: italic;">To jest tekst pochylony (italic).</p>
+                    </div>
+                </div>
+
+                <h2>font-weight</h2>
+                <p>Określa grubość czcionki (normal, bold, 100–900).</p>
+                <div class="example-grid">
+                    <div class="example-box example-code">
+                        <h3>Kod</h3>
+                        <pre><code class="language-css">p { font-weight: 700; }</code></pre>
+                    </div>
+                    <div class="example-box example-result t">
+                        <h3>Wynik</h3>
+                        <p style="font-weight:700;">Ten tekst jest pogrubiony (700).</p>
+                    </div>
+                </div>
+
+                <h2>font-family</h2>
+                <p>Określa rodzinę czcionek; można podać listę zapasowych fontów.</p>
+                <div class="example-grid">
+                    <div class="example-box example-code">
+                        <h3>Kod</h3>
+                        <pre><code class="language-css">p { font-family: 'Georgia', serif; }</code></pre>
+                    </div>
+                    <div class="example-box example-result t">
+                        <h3>Wynik</h3>
+                        <p style="font-family: 'Georgia', serif;">Przykład kroju szeryfowego (Georgia).</p>
+                    </div>
+                </div>
+
+                <h2>font-size</h2>
+                <p>Kontroluje rozmiar tekstu; można używać jednostek px, rem, em, % itp.</p>
+                <div class="example-grid">
+                    <div class="example-box example-code">
+                        <h3>Kod</h3>
+                        <pre><code class="language-css">p { font-size: 18px; }</code></pre>
+                    </div>
+                    <div class="example-box example-result t">
+                        <h3>Wynik</h3>
+                        <p style="font-size:18px;">Tekst o rozmiarze 18px.</p>
+                    </div>
+                </div>
+
+                <h2>text-align</h2>
+                <p>Ustawia wyrównanie tekstu: left, right, center, justify.</p>
+                <div class="example-grid">
+                    <div class="example-box example-code">
+                        <h3>Kod</h3>
+                        <pre><code class="language-css">p { text-align: center; }</code></pre>
+                    </div>
+                    <div class="example-box example-result t">
+                        <h3>Wynik</h3>
+                        <p style="text-align:center;">Ten akapit jest wyśrodkowany.</p>
+                    </div>
+                </div>
+
+                <h2>text-decoration</h2>
+                <p>Dodaje dekoracje tekstu: underline, line-through, overline, none.</p>
+                <div class="example-grid">
+                    <div class="example-box example-code">
+                        <h3>Kod</h3>
+                        <pre><code class="language-css">a { text-decoration: underline; }</code></pre>
+                    </div>
+                    <div class="example-box example-result t">
+                        <h3>Wynik</h3>
+                        <p><a href="#" style="text-decoration:underline;color:black">Link z podkreśleniem</a></p>
+                    </div>
+                </div>
+
+                <h2>line-height</h2>
+                <p>Kontroluje wysokość linii i odległość między wierszami tekstu.</p>
+                <div class="example-grid">
+                    <div class="example-box example-code">
+                        <h3>Kod</h3>
+                        <pre><code class="language-css">p { line-height: 1.8; }</code></pre>
+                    </div>
+                    <div class="example-box example-result t">
+                        <h3>Wynik</h3>
+                        <p style="line-height:1.8;">Ten paragraf ma zwiększony odstęp między wierszami, co poprawia czytelność dłuższych tekstów.</p>
+                    </div>
+                </div>
+
+                <h2>letter-spacing</h2>
+                <p>Reguluje odstęp między literami (tracking).</p>
+                <div class="example-grid">
+                    <div class="example-box example-code">
+                        <h3>Kod</h3>
+                        <pre><code class="language-css">p { letter-spacing: 0.08em; }</code></pre>
+                    </div>
+                    <div class="example-box example-result t">
+                        <h3>Wynik</h3>
+                        <p style="letter-spacing:0.08em;">Tekst z większym odstępem między literami.</p>
+                    </div>
+                </div>
+
+                <h2>text-transform</h2>
+                <p>Zmienia wielkość liter: uppercase, lowercase, capitalize.</p>
+                <div class="example-grid">
+                    <div class="example-box example-code">
+                        <h3>Kod</h3>
+                        <pre><code class="language-css">p { text-transform: uppercase; }</code></pre>
+                    </div>
+                    <div class="example-box example-result t">
+                        <h3>Wynik</h3>
+                        <p style="text-transform:uppercase;">Tekst zamieniony na wielkie litery.</p>
+                    </div>
+                </div>
+
+                <h2>white-space</h2>
+                <p>Kontroluje sposób łamania i zachowywania białych znaków (normal, nowrap, pre, pre-wrap).</p>
+                <div class="example-grid">
+                    <div class="example-box example-code">
+                        <h3>Kod</h3>
+                        <pre><code class="language-css">p { white-space: pre-wrap; }</code></pre>
+                    </div>
+                    <div class="example-box example-result t">
+                        <h3>Wynik</h3>
+                        <p style="white-space:pre-wrap;">Linia 1
+Linia 2 z zachowaniem        spacji</p>
+                    </div>
+                </div>
+            </article>
+        </main>
+        <footer id="footer">
+            &copy; Hubert Filas 2026 &ndash; Samouczek HTML i CSS<br>
+            Źródła: Własne
+        </footer>
+        <script src="../../script.js"></script>
+        <!-- Highlight.js -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+        <script>
+            hljs.highlightAll();
+        </script>
+    </body>
+</html>

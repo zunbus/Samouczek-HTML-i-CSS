@@ -9,11 +9,11 @@ html{
 }
 
 * {
-    box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
-    color: white;
-    text-decoration: none;
-    transition: 0.1s ease;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+  text-decoration: none;
+  transition: 0.1s ease;
 }
 
 body {
@@ -73,8 +73,12 @@ article {
   overflow-y: auto;
 }
 
-article p, h1, h2, h3, h4, h5, h6, span {
+article p, h1, h2, h3, h4, h5, h6, em, strong, q, cite, del, br, sup, sub, i, b, caption, thead, tbody, tfoot, tr, th, td, colgroup, col {
   color: black;
+}
+table, tr, td, th {
+  border: 2px solid black;
+  border-collapse: collapse;
 }
 
 header {
@@ -135,28 +139,6 @@ footer {
   align-items: center;
   justify-content: center;
 }
-.code {
-  border-radius: 15px;
-  background-color: #333;
-  border-left: 5px solid var(--MainColor);
-  padding: 10px;
-  width: fit-content;
-  white-space: pre-wrap;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-}
-
-.sct{
-  color: yellow;
-}
-.brc{
-  color: #c2ae00;
-}
-.prp{
-  color: #7ecff8;
-}
-.prpval{
-  color: #97562e;
-}
 
 
 header, nav, footer {
@@ -205,29 +187,77 @@ hr {
   visibility: hidden;
 }
 
+code {
+  color: black;
+}
 
-@media screen and (max-width: 900px) {
+pre code {
+  color: initial;
+}
+
+.language-html {
+  border-left: var(--MainColor) 3px solid;
+  width: fit-content;
+}
+
+.language-css {
+  border-left: var(--MainColor) 3px solid;
+  width: fit-content;
+}
+.example-grid {
+  display: flex;
+  align-items: center;
+}
+.example-box {
+  border: 1px solid #888;
+  border-radius: 8px;
+  padding: 0.1cm;
+  background-color: #f4f4f4;
+  width: fit-content;
+}
+.example-box h3 {
+  margin-top: 0;
+  font-size: 0.95rem;
+}
+.example-code {
+  overflow-x: auto;
+}
+.example-result {
+  background-color: white;
+  padding: 1rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  min-height: 4rem;
+}
+.example-result p {
+  margin: 0;
+}
+.emphasized {
+  font-style: italic;
+}
+
+@media screen and (max-width: 768px) {
   #shownavbutton{
-    height: fit-content;
-    visibility: visible;
+  height: fit-content;
+  visibility: visible;
   }
   #hidenavbutton{
-    height: fit-content;
-    visibility: visible;
+  height: fit-content;
+  visibility: visible;
   }
   nav {
-    width: 0;
+  width: 0;
   }
   article {
-    width: 100%;
+  width: 100%;
   }
   a {
-    font-size: larger;
+  font-size: larger;
   }
   p {
-    font-size: larger;
+  font-size: larger;
   }
   img {
-    width: 80%;
+  width: 80%;
   }
 }

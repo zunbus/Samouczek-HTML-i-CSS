@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pl">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Samouczek HTML</title>
+        <link rel="icon" type="image/x-icon" href="../../img/Logo.png">
+        <link rel="stylesheet" href="../../style.css">
+        <style>
+            :root {
+                --MainColor: #E34F26;
+                --SideColor: #a73a1b;
+                --DarkColor: #772914;
+            }
+            .t{
+                color: black;
+            }
+        </style>
+        <!-- Highlight.js Theme -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
+        <script>let type = 1;</script>
+    </head>
+    <body>
+        <header id="header">
+            <ul>
+                <li><a onclick="openMP('../../index.html')" href="#">Strona Główna</a></li>
+                <li><a href="#">HTML</a></li>
+                <li><a onclick="openCSS('../CSS/css-intro.html')" href="#">CSS</a></li>
+            </ul>
+        </header>
+        <main>
+            <nav id="nav">
+                <ul id="subpages">
+                </ul>
+            </nav>
+            <article id="article">
+                <a onclick="showNav()" id="shownavbutton" href="#" style="color: white; background-color: var(--SideColor); padding: 10px; position: fixed; left: 0; border-radius: 0 10px 10px 0;">&gt;</a>
+                <!-- Artykuł poniżej -->
+
+                <h1>Elementy Semantyczne</h1>
+                <p>
+                    Elementy semantyczne w HTML informują przeglądarkę i czytniki ekranu o roli fragmentu dokumentu. Zamiast używać tylko <code>&lt;div&gt;</code>, warto stosować znaczniki takie jak <code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;article&gt;</code>, <code>&lt;section&gt;</code>, <code>&lt;aside&gt;</code> i <code>&lt;footer&gt;</code>.
+                </p>
+                <h2>Dlaczego semantyka jest ważna?</h2>
+                <ul>
+                    <li>Poprawia dostępność dla czytników ekranu.</li>
+                    <li>Ułatwia indeksowanie przez wyszukiwarki.</li>
+                    <li>Sprawia, że kod jest czytelniejszy dla programisty.</li>
+                </ul>
+                <div class="example-grid">
+                    <div class="example-box example-code">
+                        <h3>Kod</h3>
+                        <pre><code class="language-html">&lt;body&gt;
+  &lt;header&gt;
+    &lt;h1&gt;Blog o kodowaniu&lt;/h1&gt;
+    &lt;nav&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href="#"&gt;Start&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#"&gt;Artykuły&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#"&gt;Kontakt&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/nav&gt;
+  &lt;/header&gt;
+
+  &lt;main&gt;
+    &lt;article&gt;
+      &lt;h2&gt;Nowy wpis&lt;/h2&gt;
+      &lt;p&gt;Tekst wprowadzający do artykułu.&lt;/p&gt;
+      &lt;figure&gt;
+        &lt;img src="../../img/Logo.png" alt="Logo strony" /&gt;
+        &lt;figcaption&gt;Logo witryny.&lt;/figcaption&gt;
+      &lt;/figure&gt;
+    &lt;/article&gt;
+
+    &lt;aside&gt;
+      &lt;h3&gt;Polecane&lt;/h3&gt;
+      &lt;p&gt;Lista pomocnych linków.&lt;/p&gt;
+    &lt;/aside&gt;
+  &lt;/main&gt;
+
+  &lt;footer&gt;
+    &lt;p&gt;2026 &ndash; Autor strony&lt;/p&gt;
+  &lt;/footer&gt;
+&lt;/body&gt;</code></pre>
+                    </div>
+                    <div class="example-box example-result t" style="padding:1rem; background:#f7f7f7; border:1px solid #ccc;">
+                        <h3>Wynik</h3>
+                        <div style="font-family:Arial, sans-serif; color:#111;">
+                            <div style="margin-bottom:1rem;">
+                                <h1 style="margin:0;">Blog o kodowaniu</h1>
+                                <nav style="margin-top:0.5rem; background-color: transparent; width: fit-content;">
+                                    <a href="#" style="margin-right:0.75rem; text-decoration:none; color:#0056b3;">Start</a>
+                                    <a href="#" style="margin-right:0.75rem; text-decoration:none; color:#0056b3;">Artykuły</a>
+                                    <a href="#" style="text-decoration:none; color:#0056b3;">Kontakt</a>
+                                </nav>
+                            </div>
+                            <div style="display:flex; gap:1rem; flex-wrap:wrap;">
+                                <div style="flex:1 1 250px; min-width:220px;">
+                                    <h2 style="margin-top:0;">Nowy wpis</h2>
+                                    <p style="margin:0.5rem 0 0 0;">Tekst wprowadzający do artykułu.</p>
+                                </div>
+                                <div style="flex:1 1 180px; min-width:180px; border:1px solid #ddd; padding:0.75rem; background:#fff;">
+                                    <h3 style="margin-top:0;">Polecane</h3>
+                                    <p style="margin:0;">Lista pomocnych linków.</p>
+                                </div>
+                            </div>
+                            <div style="margin-top:1rem; font-size:0.9rem; color:#333;">
+                                <p style="margin:0;">2026 &ndash; Autor strony</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <h2>Najważniejsze elementy semantyczne</h2>
+                <ul>
+                    <li class="t"><strong>&lt;header&gt;</strong> &ndash; nagłówek sekcji lub strony.</li>
+                    <li class="t"><strong>&lt;nav&gt;</strong> &ndash; nawigacja z linkami.</li>
+                    <li class="t"><strong>&lt;main&gt;</strong> &ndash; główna zawartość dokumentu.</li>
+                    <li class="t"><strong>&lt;article&gt;</strong> &ndash; samodzielny wpis lub artykuł.</li>
+                    <li class="t"><strong>&lt;section&gt;</strong> &ndash; logiczny rozdział treści.</li>
+                    <li class="t"><strong>&lt;aside&gt;</strong> &ndash; materiały poboczne, np. banery lub dodatkowe informacje.</li>
+                    <li class="t"><strong>&lt;footer&gt;</strong> &ndash; stopka strony lub sekcji.</li>
+                    <li class="t"><strong>&lt;figure&gt;</strong> i <strong>&lt;figcaption&gt;</strong> &ndash; obrazek z podpisem.</li>
+                </ul>
+                <h2>Praktyczne uwagi</h2>
+                <ul>
+                    <li class="t">Używaj <code>&lt;section&gt;</code> raczej do logicznych bloków niż do czystego układu.</li>
+                    <li class="t">Nie umieszczaj więcej niż jednej pary <code>&lt;main&gt;</code> w dokumencie.</li>
+                    <li class="t"><code>&lt;article&gt;</code> jest dobre dla wpisów blogowych, wiadomości lub samodzielnych treści.</li>
+                    <li class="t">Jeżeli chcesz opisać datę, użyj <code>&lt;time datetime="..."&gt;</code>.</li>
+                </ul>
+                <p>
+                    Znaczniki semantyczne pomagają tworzyć strony, które są bardziej zrozumiałe zarówno dla ludzi, jak i dla maszyn.
+                </p>
+            </article>
+        </main>
+        <footer id="footer">
+            &copy; Hubert Filas 2026 &ndash; Samouczek HTML i CSS<br>
+            Źródła: Własne
+        </footer>
+        <script src="../../script.js"></script>
+        <!-- Highlight.js -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+        <script>
+            hljs.highlightAll();
+        </script>
+    </body>
+</html>

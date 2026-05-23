@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pl">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Samouczek HTML</title>
+        <link rel="icon" type="image/x-icon" href="../../img/Logo.png">
+        <link rel="stylesheet" href="../../style.css">
+        <style>
+            :root {
+                --MainColor: #E34F26;
+                --SideColor: #a73a1b;
+                --DarkColor: #772914;
+            }
+            .t {
+                color: black;
+            }
+            
+        </style>
+        <!-- Highlight.js Theme -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
+        <script>let type = 1;</script>
+    </head>
+    <body>
+        <header id="header">
+            <ul>
+                <li><a onclick="openMP('../../index.html')" href="#">Strona Główna</a></li>
+                <li><a href="#">HTML</a></li>
+                <li><a onclick="openCSS('../CSS/css-intro.html')" href="#">CSS</a></li>
+            </ul>
+        </header>
+        <main>
+            <nav id="nav">
+                <ul id="subpages">
+                </ul>
+            </nav>
+            <article id="article">
+                <a onclick="showNav()" id="shownavbutton" href="#" style="color: white; background-color: var(--SideColor); padding: 10px; position: fixed; left: 0; border-radius: 0 10px 10px 0;">&gt;</a>
+                <!-- Artykuł poniżej -->
+
+                <h1>Listy</h1>
+                <p>
+                    Listy w HTML służą do przedstawiania zbiorów elementów w czytelny i uporządkowany sposób.
+                    Najczęściej używa się list nienumerowanych, numerowanych oraz definicji.
+                </p>
+
+                <h2>&lt;ul&gt;</h2>
+                <p>
+                    <code>&lt;ul&gt;</code> tworzy listę z punktami oznaczonymi symbolami. Każdy element listy musi znajdować się w <code>&lt;li&gt;</code>.
+                </p>
+                <div class="example-grid">
+                    <div class="example-box example-code">
+                        <h3>Kod</h3>
+                        <pre><code class="language-html">&lt;ul&gt;
+  &lt;li&gt;Jabłka&lt;/li&gt;
+  &lt;li&gt;Banany&lt;/li&gt;
+  &lt;li&gt;Czereśnie&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+                    </div>
+                    <div class="example-box example-result">
+                        <h3>Wynik</h3>
+                        <ul>
+                            <li class="t">Jabłka</li>
+                            <li class="t">Banany</li>
+                            <li class="t">Czereśnie</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h2>&lt;ol&gt;</h2>
+                <p>
+                    <code>&lt;ol&gt;</code> tworzy listę numerowaną, idealną do instrukcji lub kolejnych kroków.
+                    Liczby są dodawane automatycznie przez przeglądarkę.
+                </p>
+                <div class="example-grid">
+                    <div class="example-box example-code">
+                        <h3>Kod</h3>
+                        <pre><code class="language-html">&lt;ol&gt;
+  &lt;li&gt;Włącz komputer&lt;/li&gt;
+  &lt;li&gt;Otwórz przeglądarkę&lt;/li&gt;
+  &lt;li&gt;Odwiedź stronę&lt;/li&gt;
+&lt;/ol&gt;</code></pre>
+                    </div>
+                    <div class="example-box example-result">
+                        <h3>Wynik</h3>
+                        <ol>
+                            <li class="t">Włącz komputer</li>
+                            <li class="t">Otwórz przeglądarkę</li>
+                            <li class="t">Odwiedź stronę</li>
+                        </ol>
+                    </div>
+                </div>
+
+                <h2>&lt;dl&gt;</h2>
+                <p>
+                    <code>&lt;dl&gt;</code> to lista definicji. Zawiera pary <code>&lt;dt&gt;</code> (termin) i <code>&lt;dd&gt;</code> (opis).
+                </p>
+                <div class="example-grid">
+                    <div class="example-box example-code">
+                        <h3>Kod</h3>
+                        <pre><code class="language-html">&lt;dl&gt;
+  &lt;dt&gt;HTML&lt;/dt&gt;
+  &lt;dd&gt;Język znaczników służący do tworzenia stron internetowych.&lt;/dd&gt;
+  &lt;dt&gt;CSS&lt;/dt&gt;
+  &lt;dd&gt;Stylizacja wyglądu elementów HTML.&lt;/dd&gt;
+&lt;/dl&gt;</code></pre>
+                    </div>
+                    <div class="example-box example-result">
+                        <h3>Wynik</h3>
+                        <dl>
+                            <dt class="t">HTML</dt>
+                            <dd class="t">Język znaczników służący do tworzenia stron internetowych.</dd>
+                            <dt class="t">CSS</dt>
+                            <dd class="t">Stylizacja wyglądu elementów HTML.</dd>
+                        </dl>
+                    </div>
+                </div>
+
+                <p>
+                    Listy w HTML to proste i czytelne narzędzie do organizowania treści. Warto używać odpowiedniego typu listy zgodnie z przeznaczeniem.
+                </p>
+            </article>
+        </main>
+        <footer id="footer">
+            &copy; Hubert Filas 2026 &ndash; Samouczek HTML i CSS<br>
+            Źródła: Własne
+        </footer>
+        <script src="../../script.js"></script>
+        <!-- Highlight.js -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+        <script>
+            hljs.highlightAll();
+        </script>
+    </body>
+</html>

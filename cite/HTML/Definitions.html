@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pl">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Samouczek HTML</title>
+        <link rel="icon" type="image/x-icon" href="../../img/Logo.png">
+        <link rel="stylesheet" href="../../style.css">
+        <style>
+            :root {
+                --MainColor: #E34F26;
+                --SideColor: #a73a1b;
+                --DarkColor: #772914;
+            }
+            ol li {
+                color: black;
+            }
+        </style>
+        <script>let type = 1;</script>
+    </head>
+    <body>
+        <header id="header">
+            <ul>
+                <li><a onclick="openMP('../../index.html')" href="#">Strona Główna</a></li>
+                <li><a href="#">HTML</a></li>
+                <li><a onclick="openCSS('../CSS/css-intro.html')" href="#">CSS</a></li>
+            </ul>
+        </header>
+        <main>
+            <nav id="nav">
+                <ul id="subpages">
+                </ul>
+            </nav>
+            <article id="article">
+                <a onclick="showNav()" id="shownavbutton" href="#" style="color: white; background-color: var(--SideColor); padding: 10px; position: fixed; left: 0; border-radius: 0 10px 10px 0;">&gt;</a>
+                <!-- Artykuł poniżej -->
+
+                <h1>Ważne Definicje</h1>
+
+                <p>
+                    HTML &ndash; HyperText Markup Language (Hipertekstowy język znaczników), szeroko wykorzystywany do tworzenia stron internetowych. 
+                    Wcześniej wykorzystywany był do formatowania tekstu w dokumentach. Standardy HTML tworzy konsorcjum World Wide Web (World Wide Web Consortium &ndash; W3C).
+                </p>
+
+                <p>
+                    Parser &ndash; element programu, który analizuje tekst lub dane i zamienia je na strukturę zrozumiałą dla komputera. Jeśli parser nie może
+                    zamienić jakiejś części kodu, jest to traktowane jako <span style="color: red;">błąd kodu</span>. Parserem dla HTML jest walidator dostępny na stronie <a href="validator.w3.org" style="color: blue; text-decoration: underline;">validator.w3.org</a>.
+                </p>
+
+                <p>
+                    Doctype &ndash; umieszcza się go na początku strony, deklaruje w jakim języku jest napisana strona. Dla HTML jest to &lt;!DOCTYPE html&gt;.
+                </p>
+
+                <p>
+                    Strona internetowa &ndash; Pojedyńczy plik .html
+                </p>
+
+                <p>
+                    Witryna internetowa &ndash; zbiór stron internetowych.
+                </p>
+
+                <p>
+                    Portal &ndash; wielotematyczny serwis internetowy oferujący szeroki zakres funkcji i usług.
+                </p>
+
+                <p>
+                    Wortal &ndash; specjalistyczny rodzaj portalu skupiający się na jednej konkretnej dziedzinie lub temacie.
+                </p>
+
+                <p>
+                    Znacznik &ndash; instrukcja formatująca (dzieląca stronę na elementy). Informuje przeglądarkę jak ma przekształcić tekst w stronę www. <br>
+                    &lt;znacznik&gt; &rarr; znacznik początkowy<br>
+                    &lt;/znacznik&gt; &rarr; znacznik końcowy<br>
+                    Znaczniki zawsze zamykamy w kolejności przeciwnej do kolejności ich otwierania.
+                </p>
+
+                <p>
+                    5 zasad tworzenia stron internetowych
+                </p>
+                <ol>
+                    <li>Nigdy nie krzyżuj znaczników</li>
+                    <li>Wszystkie znaczniki oraz atrubuty zapisujemy małymi literami</li>
+                    <li>Atrybuty zapisujemy w cudzysłowie małymi literami</li>
+                    <li>Zawsze zamykaj znaczniki kontenerowe</li>
+                    <li>Uważaj z znakami specjalnymi</li>
+                </ol>
+                
+            </article>
+        </main>
+        <footer id="footer">
+            &copy; Hubert Filas 2026 &ndash; Samouczek HTML i CSS<br>
+            Źródła: Własne
+        </footer>
+        <script src="../../script.js"></script>
+    </body>
+</html>

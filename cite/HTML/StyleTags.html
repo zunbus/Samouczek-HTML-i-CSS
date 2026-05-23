@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="pl">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Samouczek HTML</title>
+        <link rel="icon" type="image/x-icon" href="../../img/Logo.png">
+        <link rel="stylesheet" href="../../style.css">
+        <style>
+            :root {
+                --MainColor: #E34F26;
+                --SideColor: #a73a1b;
+                --DarkColor: #772914;
+            }
+            .t {
+                color: black;
+            }
+            
+        </style>
+        <!-- Highlight.js Theme -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
+        <script>let type = 1;</script>
+    </head>
+    <body>
+        <header id="header">
+            <ul>
+                <li><a onclick="openMP('../../index.html')" href="#">Strona Główna</a></li>
+                <li><a href="#">HTML</a></li>
+                <li><a onclick="openCSS('../CSS/css-intro.html')" href="#">CSS</a></li>
+            </ul>
+        </header>
+        <main>
+            <nav id="nav">
+                <ul id="subpages">
+                </ul>
+            </nav>
+            <article id="article">
+                <a onclick="showNav()" id="shownavbutton" href="#" style="color: white; background-color: var(--SideColor); padding: 10px; position: fixed; left: 0; border-radius: 0 10px 10px 0;">&gt;</a>
+                <!-- Artykuł poniżej -->
+
+                <h1>Znaczniki stylistyczne</h1>
+                <p>
+                    Znaczniki tekstowe wpływają na wygląd i znaczenie fragmentu treści w HTML.
+                    W praktyce wiele efektów można osiągnąć także przez CSS, bez zmieniania treści dokumentu.
+                </p>
+
+                <h2>&lt;em&gt; i &lt;strong&gt;</h2>
+                <p>
+                    <code>&lt;em&gt;</code> oznacza tekst wyemfatyzowany, a <code>&lt;strong&gt;</code> tekst ważny. W domyślnym stylu <code>&lt;em&gt;</code> jest pochylony, a <code>&lt;strong&gt;</code> pogrubiony.
+                </p>
+                <div class="example-grid">
+                    <div class="example-box example-code">
+                        <h3>Kod</h3>
+                        <pre><code class="language-html">&lt;p&gt;To jest &lt;em&gt;ważne&lt;/em&gt; zdanie.&lt;/p&gt;
+&lt;p&gt;To jest &lt;strong&gt;istotne&lt;/strong&gt; zdanie.&lt;/p&gt;</code></pre>
+                    </div>
+                    <div class="example-box example-result">
+                        <h3>Wynik</h3>
+                        <p>To jest <em>ważne</em> zdanie.</p>
+                        <p>To jest <strong>istotne</strong> zdanie.</p>
+                    </div>
+                </div>
+
+                <h2>&lt;q&gt; i &lt;cite&gt;</h2>
+                <p>
+                    <code>&lt;q&gt;</code> oznacza cytat w linii, a <code>&lt;cite&gt;</code> odniesienie do źródła, np. książki lub artykułu.
+                </p>
+                <div class="example-grid">
+                    <div class="example-box example-code">
+                        <h3>Kod</h3>
+                        <pre><code class="language-html">&lt;p&gt;&lt;q&gt;To jest cytat.&lt;/q&gt;&lt;/p&gt;
+&lt;p&gt;Fragment z książki &lt;cite&gt;Nazwa książki&lt;/cite&gt;.&lt;/p&gt;</code></pre>
+                    </div>
+                    <div class="example-box example-result">
+                        <h3>Wynik</h3>
+                        <p><q>To jest cytat.</q></p>
+                        <p>Fragment z książki <cite>Nazwa książki</cite>.</p>
+                    </div>
+                </div>
+
+                <h2>&lt;del&gt; i &lt;br&gt;</h2>
+                <p>
+                    <code>&lt;del&gt;</code> oznacza tekst usunięty lub poprawiony, a <code>&lt;br&gt;</code> wymusza przejście do nowej linii bez rozpoczynania nowego akapitu.
+                </p>
+                <div class="example-grid">
+                    <div class="example-box example-code">
+                        <h3>Kod</h3>
+                        <pre><code class="language-html">&lt;p&gt;To jest &lt;del&gt;stare&lt;/del&gt; nowe zdanie.&lt;/p&gt;
+&lt;p&gt;Pierwsza linia.&lt;br&gt;Druga linia.&lt;/p&gt;</code></pre>
+                    </div>
+                    <div class="example-box example-result">
+                        <h3>Wynik</h3>
+                        <p>To jest <del>stare</del> nowe zdanie.</p>
+                        <p>Pierwsza linia.<br>Druga linia.</p>
+                    </div>
+                </div>
+
+                <h2>&lt;sup&gt; i &lt;sub&gt;</h2>
+                <p>
+                    <code>&lt;sup&gt;</code> umieszcza tekst jako indeks górny, a <code>&lt;sub&gt;</code> jako indeks dolny. Przydają się przy zapisie potęg, wartości chemicznych lub przypisów.
+                </p>
+                <div class="example-grid">
+                    <div class="example-box example-code">
+                        <h3>Kod</h3>
+                        <pre><code class="language-html">&lt;p&gt;x&lt;sup&gt;2&lt;/sup&gt; = 9&lt;/p&gt;
+&lt;p&gt;H&lt;sub&gt;2&lt;/sub&gt;O&lt;/p&gt;</code></pre>
+                    </div>
+                    <div class="example-box example-result">
+                        <h3>Wynik</h3>
+                        <p>3<sup>2</sup> = 9</p>
+                        <p>H<sub>2</sub>O</p>
+                    </div>
+                </div>
+
+                <h2>&lt;i&gt; i &lt;b&gt;</h2>
+                <p>
+                    <code>&lt;i&gt;</code> to tekst pisany kursywą bez dodatkowego znaczenia, a <code>&lt;b&gt;</code> to tekst pogrubiony bez dodatkowego znaczenia semantycznego.
+                    W praktyce często łatwiej jest uzyskać ten sam efekt za pomocą CSS.
+                </p>
+                <div class="example-grid">
+                    <div class="example-box example-code">
+                        <h3>Kod</h3>
+                        <pre><code class="language-html">&lt;p&gt;Tekst w stylu &lt;i&gt;kursywy&lt;/i&gt;.&lt;/p&gt;
+&lt;p&gt;Tekst w stylu &lt;b&gt;pogrubienia&lt;/b&gt;.&lt;/p&gt;</code></pre>
+                    </div>
+                    <div class="example-box example-result">
+                        <h3>Wynik</h3>
+                        <p>Tekst w stylu <i>kursywy</i>.</p>
+                        <p>Tekst w stylu <b>pogrubienia</b>.</p>
+                    </div>
+                </div>
+
+                <h2>Użycie CSS zamiast znaczników</h2>
+                <p>
+                    W praktyce wiele stylów można zmienić przez CSS bez konieczności wstawiania dodatkowych znaczników w treści.
+                    Na przykład <code>&lt;em&gt;</code> i <code>&lt;i&gt;</code> można zastąpić klasami, które nadają ten sam wygląd.</p>
+                <div class="example-grid">
+                    <div class="example-box example-code">
+                        <h3>Kod</h3>
+                        <pre><code class="language-html">&lt;p class="emphasized"&gt;Tekst z klasą zamiast &lt;em&gt;.&lt;/p&gt;</code></pre>
+                    </div>
+                    <div class="example-box example-result">
+                        <h3>Wynik</h3>
+                        <p class="emphasized">Tekst z klasą zamiast &lt;em&gt;.</p>
+                    </div>
+                </div>
+                <p>
+                    W CSS wystarczy dodać regułę <code>.emphasized { font-style: italic; }</code> albo <code>.strong { font-weight: bold; }</code>.
+                    Dzięki temu struktura treści pozostaje czystsza, a wygląd można zmieniać centralnie.
+                </p>
+            </article>
+        </main>
+        <footer id="footer">
+            &copy; Hubert Filas 2026 &ndash; Samouczek HTML i CSS<br>
+            Źródła: Własne
+        </footer>
+        <script src="../../script.js"></script>
+        <!-- Highlight.js -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+        <script>
+            hljs.highlightAll();
+        </script>
+    </body>
+</html>

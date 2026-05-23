@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pl">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Samouczek HTML</title>
+        <link rel="icon" type="image/x-icon" href="../../img/Logo.png">
+        <link rel="stylesheet" href="../../style.css">
+        <style>
+            :root {
+                --MainColor: #E34F26;
+                --SideColor: #a73a1b;
+                --DarkColor: #772914;
+            }
+
+            .t {
+                color: black;
+            }
+        </style>
+        <!-- Highlight.js Theme -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
+        <script>let type = 1;</script>
+    </head>
+    <body>
+        <header id="header">
+            <ul>
+                <li><a onclick="openMP('../../index.html')" href="#">Strona Główna</a></li>
+                <li><a href="#">HTML</a></li>
+                <li><a onclick="openCSS('../CSS/css-intro.html')" href="#">CSS</a></li>
+            </ul>
+        </header>
+        <main>
+            <nav id="nav">
+                <ul id="subpages">
+                </ul>
+            </nav>
+            <article id="article">
+                <a onclick="showNav()" id="shownavbutton" href="#" style="color: white; background-color: var(--SideColor); padding: 10px; position: fixed; left: 0; border-radius: 0 10px 10px 0;">&gt;</a>
+                <!-- Artykuł poniżej -->
+
+                <h1>Odnośniki i kotwice</h1>
+                <p>
+                    Odnośniki w HTML tworzy się za pomocą znacznika <code>&lt;a&gt;</code>. Służą do łączenia stron, sekcji na tej samej witrynie oraz rozpoczęcia wiadomości e-mail.
+                </p>
+
+                <h2>Podstawowy link</h2>
+                <p>
+                    Najczęściej używany jest atrybut <code>href</code>, który określa adres docelowy. Tekst między znacznikami jest klikalny.
+                </p>
+                <div class="example-grid">
+                    <div class="example-box example-code">
+                        <h3>Kod</h3>
+                        <pre><code class="language-html">&lt;p&gt;Odwiedź &lt;a href="https://example.com"&gt;naszą stronę&lt;/a&gt;.&lt;/p&gt;</code></pre>
+                    </div>
+                    <div class="example-box example-result">
+                        <h3>Wynik</h3>
+                        <p>Odwiedź <a href="https://example.com" class="t">naszą stronę</a>.</p>
+                    </div>
+                </div>
+
+                <h2>Link do sekcji na stronie (&lt;#id&gt;)</h2>
+                <p>
+                    Kotwice tworzy się przez przypisanie identyfikatora <code>id</code> do elementu oraz linkowanie do niego z <code>href="#nazwa"</code>.
+                </p>
+                <div class="example-grid">
+                    <div class="example-box example-code">
+                        <h3>Kod</h3>
+                        <pre><code class="language-html">&lt;a href="#kontakt"&gt;Idź do kontaktu&lt;/a&gt;
+&lt;h2 id="kontakt"&gt;Kontakt&lt;/h2&gt;
+&lt;p&gt;Tu znajduje się sekcja kontaktowa.&lt;/p&gt;</code></pre>
+                    </div>
+                    <div class="example-box example-result">
+                        <h3>Wynik</h3>
+                        <p><a href="#kontakt" class="t">Idź do kontaktu</a></p>
+                        <h2 id="kontakt">Kontakt</h2>
+                        <p>Tu znajduje się sekcja kontaktowa.</p>
+                    </div>
+                </div>
+
+                <h2>Link do pliku lub fragmentu strony</h2>
+                <p>
+                    Atrybut <code>href</code> może wskazywać plik lokalny, adres e-mail, numer telefonu lub fragment dokumentu. Często używa się też <code>target="_blank"</code> dla otwarcia w nowej karcie.
+                </p>
+                <div class="example-grid">
+                    <div class="example-box example-code">
+                        <h3>Kod</h3>
+                        <pre><code class="language-html">&lt;p&gt;&lt;a href="mailto:kontakt@example.com"&gt;Napisz e-mail&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://example.com" target="_blank"&gt;Otwórz w nowej karcie&lt;/a&gt;&lt;/p&gt;</code></pre>
+                    </div>
+                    <div class="example-box example-result">
+                        <h3>Wynik</h3>
+                        <p><a href="mailto:kontakt@example.com" class="t">Napisz e-mail</a></p>
+                        <p><a href="https://example.com" target="_blank" class="t">Otwórz w nowej karcie</a></p>
+                    </div>
+                </div>
+
+                <p>
+                    W HTML znacznik <code>&lt;a&gt;</code> jest bardzo uniwersalny. Dzięki atrybutowi <code>href</code> można tworzyć odnośniki do zewnętrznych stron, plików, adresów e-mail, obrazów, ftp i kotwic wewnątrz dokumentu.
+                </p>
+            </article>
+        </main>
+        <footer id="footer">
+            &copy; Hubert Filas 2026 &ndash; Samouczek HTML i CSS<br>
+            Źródła: Własne
+        </footer>
+        <script src="../../script.js"></script>
+        <!-- Highlight.js -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+        <script>
+            hljs.highlightAll();
+        </script>
+    </body>
+</html>

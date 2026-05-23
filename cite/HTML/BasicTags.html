@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pl">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Samouczek HTML</title>
+        <link rel="icon" type="image/x-icon" href="../../img/Logo.png">
+        <link rel="stylesheet" href="../../style.css">
+        <style>
+            :root {
+                --MainColor: #E34F26;
+                --SideColor: #a73a1b;
+                --DarkColor: #772914;
+            }
+            .t {
+                color: black;
+            }
+            code {
+                color: black;
+            }
+        </style>
+        <script>let type = 1;</script>
+    </head>
+    <body>
+        <header id="header">
+            <ul>
+                <li><a onclick="openMP('../../index.html')" href="#">Strona Główna</a></li>
+                <li><a href="#">HTML</a></li>
+                <li><a onclick="openCSS('../CSS/css-intro.html')" href="#">CSS</a></li>
+            </ul>
+        </header>
+        <main>
+            <nav id="nav">
+                <ul id="subpages">
+                </ul>
+            </nav>
+            <article id="article">
+                <a onclick="showNav()" id="shownavbutton" href="#" style="color: white; background-color: var(--SideColor); padding: 10px; position: fixed; left: 0; border-radius: 0 10px 10px 0;">&gt;</a>
+                <!-- Artykuł poniżej -->
+
+                <h1>Podstawowe znaczniki</h1>
+                <p>
+                    Znaczniki dzielimy na:
+                </p>
+                    <ul>
+                        <li class="t">
+                            blokowe &ndash; zaczynają się od nowej lini
+                        </li>
+                        <li class="t">
+                            liniowe &ndash; nie zaczynają się od nowej lini
+                        </li>
+                    </ul>
+                <p>
+                    oraz
+                </p>
+                <ul>
+                    <li class="t">
+                        Kontenerowe &ndash; wymagają znacznika zamykającego.
+                    </li>
+                    <li class="t">
+                        Pojedyńcze &ndash; (zwane też pustymi lub samozamykającymi się) nie wymagają znacznika zamykającego.
+                    </li>
+                </ul>
+                
+
+                <h2>
+                    &lt;html&gt;
+                </h2>
+                <p>
+                    Znacznik <code>&lt;html&gt;</code> otacza cały dokument i informuje przeglądarkę, że to plik HTML.
+                    Atrybut <code>lang="pl"</code> określa język strony, co jest ważne dla poprawności i dostępności.
+                </p>
+
+                <h2>
+                    &lt;head&gt;
+                </h2>
+                <p>
+                    Sekcja <code>&lt;head&gt;</code> zawiera metadane: tytuł strony, kodowanie, informacje o widoku oraz linki do stylów i skryptów.
+                    Treści z tej sekcji nie są wyświetlane bezpośrednio w głównej części dokumentu.
+                </p>
+
+                <h2>
+                    &lt;body&gt;
+                </h2>
+                <p>
+                    W <code>&lt;body&gt;</code> umieszczamy widoczną treść strony: nagłówki, akapity, obrazy, linki i listy.
+                    To tutaj znajduje się wszystko, co użytkownik zobaczy podczas przeglądania witryny.
+                </p>
+
+                <h2>
+                    Przykłady znaczników
+                </h2>
+                <ul>
+                    <li class="t"><code>&lt;p&gt; ... &lt;/p&gt;</code> &ndash; akapit, znacznik kontenerowy.</li>
+                    <li class="t"><code>&lt;h1&gt; ... &lt;/h1&gt;</code> &ndash; nagłówek pierwszego poziomu, kontenerowy (poziomy nagłówków 1-6).</li>
+                    <li class="t"><code>&lt;span&gt; ... &lt;/span&gt;</code> &ndash; element liniowy do formatowania fragmentu tekstu.</li>
+                    <li class="t"><code>&lt;br&gt;</code> &ndash; łamanie linii, znacznik niekontenerowy.</li>
+                    <li class="t"><code>&lt;img src="..." alt="..."&gt;</code> &ndash; obraz, znacznik niekontenerowy.</li>
+                    <li class="t"><code>&lt;a href="..."&gt; ... &lt;/a&gt;</code> &ndash; link, element liniowy.</li>
+                    <li class="t"><code>&lt;div&gt; ... &lt;/div&gt;</code> &ndash; znacznik strukturalny, kontenerowy.</li>
+                </ul>
+
+                <p>
+                    Blokowe elementy zaczynają nową linię i mogą zawierać inne elementy (np. <code>&lt;div&gt;</code>, <code>&lt;section&gt;</code>, <code>&lt;article&gt;</code>).
+                    Liniowe elementy pozostają w obrębie tego samego wiersza i służą do formatowania krótszych fragmentów tekstu.
+                </p>
+
+                <p>
+                    Poprawne i semantyczne użycie znaczników ułatwia przeglądarkom, wyszukiwarkom i czytnikom ekranu zrozumienie zawartości strony.
+                    Dzięki temu witryna staje się bardziej dostępna i przyjazna dla użytkownika.
+                </p>
+            </article>
+        </main>
+        <footer id="footer">
+            &copy; Hubert Filas 2026 &ndash; Samouczek HTML i CSS<br>
+            Źródła: Własne
+        </footer>
+        <script src="../../script.js"></script>
+    </body>
+</html>

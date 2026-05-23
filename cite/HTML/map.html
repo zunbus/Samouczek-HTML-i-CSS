@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pl">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Samouczek HTML</title>
+        <link rel="icon" type="image/x-icon" href="../../img/Logo.png">
+        <link rel="stylesheet" href="../../style.css">
+        <style>
+            :root {
+                --MainColor: #E34F26;
+                --SideColor: #a73a1b;
+                --DarkColor: #772914;
+            }
+            .t {
+                color: black;
+            }
+            
+        </style>
+        <!-- Highlight.js Theme -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
+        <script>let type = 1;</script>
+    </head>
+    <body>
+        <header id="header">
+            <ul>
+                <li><a onclick="openMP('../../index.html')" href="#">Strona Główna</a></li>
+                <li><a href="#">HTML</a></li>
+                <li><a onclick="openCSS('../CSS/css-intro.html')" href="#">CSS</a></li>
+            </ul>
+        </header>
+        <main>
+            <nav id="nav">
+                <ul id="subpages">
+                </ul>
+            </nav>
+            <article id="article">
+                <a onclick="showNav()" id="shownavbutton" href="#" style="color: white; background-color: var(--SideColor); padding: 10px; position: fixed; left: 0; border-radius: 0 10px 10px 0;">&gt;</a>
+                <!-- Artykuł poniżej -->
+
+                <h1>Mapy odsyłaczy</h1>
+                <p>
+                    Mapy odsyłaczy w HTML pozwalają na utworzenie klikanych obszarów na jednym obrazie. Zamiast jednej klasycznej ilustracji z linkiem, możesz wyznaczyć kilka niezależnych pól prowadzących do różnych miejsc.
+                </p>
+                <h2>Jak działają mapy odsyłaczy?</h2>
+                <p>
+                    Obraz wstawiany jest za pomocą <code>&lt;img&gt;</code> z atrybutem <code>usemap</code>, który odwołuje się do <code>&lt;map&gt;</code> z nazwą. W <code>&lt;map&gt;</code> znajdują się kolejne <code>&lt;area&gt;</code>, definiujące kształt, współrzędne i cel linku.
+                </p>
+                <div class="example-grid">
+                    <div class="example-box example-code">
+                        <h3>Kod</h3>
+                        <pre><code class="language-html">&lt;img src="Logo.png" usemap="#logoMap" alt="Logo"&gt;
+&lt;map name="logoMap"&gt;
+  &lt;area shape="rect" coords="47, 100, 460, 282" href="https://example.com" alt="Przejdź do przykładu"&gt;
+&lt;/map&gt;</code></pre>
+                    </div>
+                    <div class="example-box example-result t">
+                        <h3>Wynik</h3>
+                        <img src="../../img/Logo.png" usemap="#logoMap" alt="Logo">
+                        <map name="logoMap">
+                            <area shape="rect" coords="47, 100, 460, 282" href="https://example.com" alt="Przejdź do przykładu">
+                        </map>
+                    </div>
+                </div>
+                <p>
+                    W praktyce można użyć obrazów z Internetu lub lokalnych plików. W przykładzie pokazano lokalny plik <code>Logo.png</code>, ale do <code>src</code> można też wpisać pełny adres URL obrazu.
+                </p>
+                <h2>Znaczniki związane z mapami</h2>
+                <p>
+                    Najważniejsze znaczniki to <code>&lt;img&gt;</code>, <code>&lt;map&gt;</code> i <code>&lt;area&gt;</code>. Atrybut <code>usemap</code> łączy obraz z mapą. W <code>&lt;map&gt;</code> używa się <code>name</code>, a w <code>&lt;area&gt;</code> definiuje się <code>shape</code>, <code>coords</code>, <code>href</code> i <code>alt</code>.
+                </p>
+                <h2>Typy obszarów</h2>
+                <p>
+                    Obszary mogą być prostokątne (<code>rect</code>), kołowe (<code>circle</code>) lub wielokątne (<code>poly</code>). Współrzędne określają położenie obszaru na obrazie.
+                </p>
+            </article>
+        </main>
+        <footer id="footer">
+            &copy; Hubert Filas 2026 &ndash; Samouczek HTML i CSS<br>
+            Źródła: Własne
+        </footer>
+        <script src="../../script.js"></script>
+        <!-- Highlight.js -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+        <script>
+            hljs.highlightAll();
+        </script>
+    </body>
+</html>

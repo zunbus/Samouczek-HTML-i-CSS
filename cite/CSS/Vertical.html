@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pl">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Samouczek CSS</title>
+        <link rel="icon" type="image/x-icon" href="../../img/Logo.png">
+        <link rel="stylesheet" href="../../style.css">
+        <style>
+            :root {
+                --MainColor: #1572B6;
+                --SideColor: #125d92;
+                --DarkColor: #0b3a5c;
+            }
+            .t {
+                color: black;
+            }
+            .a1 {
+                background-color: #0000;
+            }
+            .a1:hover{
+                background-color: #0000;
+            }
+        </style>
+        <script>let type = 0;</script>
+        <!-- Highlight.js Theme -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
+    </head>
+    <body>
+        <header id="header">
+            <ul>
+                <li><a onclick="openMP('../../index.html')" href="#">Strona Główna</a></li>
+                <li><a onclick="openHTML('../HTML/html-intro.html')" href="#">HTML</a></li>
+                <li><a href="#">CSS</a></li>
+            </ul>
+        </header>
+        <main>
+            <nav id="nav">
+                <ul id="subpages">
+                </ul>
+            </nav>
+            <article id="article">
+                <a onclick="showNav()" id="shownavbutton" href="#" style="color: white; background-color: var(--SideColor); padding: 10px; position: fixed; left: 0; border-radius: 0 10px 10px 0;">&gt;</a>
+                <!-- Artykuł poniżej -->
+
+                <h1>Menu pionowe</h1>
+                <p>
+                    Menu pionowe to nawigacja ułożona w kolumnie. Najczęściej stosowane w bocznych panelach (sidebar) lub w aplikacjach, gdzie wymagana jest długa lista sekcji.
+                </p>
++                <h2>Jak zbudować menu pionowe?</h2>
+                <p>
+                    Podstawą jest semantyczna lista <code>&lt;ul&gt;</code> z elementami <code>&lt;li&gt;</code> i linkami <code>&lt;a&gt;</code>. CSS sprawia, że linki zajmują całą szerokość wiersza, co poprawia klikalność.
+                </p>
+                <div class="example-grid">
+                    <div class="example-box example-code">
+                        <h3>Kod</h3>
+                        <pre><code class="language-html">&lt;nav&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href="#"&gt;Panel 1&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#"&gt;Panel 2&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="#"&gt;Panel 3&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;</code></pre>
+
+<pre><code class="language-css">
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 200px;
+}
+
+nav a {
+  display: block;
+  padding: 0.75rem 1rem;
+  text-decoration: none;
+  color: inherit;
+}
+
+nav li { border-top: 1px solid #e0e0e0; }</code></pre>
+                    </div>
+                    <div class="example-box example-result t" style="padding:1rem; background:#f7f7f7; border:1px solid #ccc;">
+                        <h3>Wynik</h3>
+                        <nav style="width:200px;">
+                            <ul>
+                                <li><a href="#" style="display:block; padding:0.75rem 1rem; text-decoration:none; color:black;" class="a1">Panel 1</a></li>
+                                <li><a href="#" style="display:block; padding:0.75rem 1rem; text-decoration:none; color:black; border-top:1px solid #e0e0e0;" class="a1">Panel 2</a></li>
+                                <li><a href="#" style="display:block; padding:0.75rem 1rem; text-decoration:none; color:black; border-top:1px solid #e0e0e0;" class="a1">Panel 3</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+                <h2>Zalety</h2>
+                <ul>
+                    <li class="t">Dobrze skaluje się przy wielu pozycjach nawigacyjnych.</li>
+                    <li class="t">Łatwiejsze do czytania i skanowania w pionie.</li>
+                    <li class="t">Może pełnić rolę trwale widocznego panelu bocznego.</li>
+                </ul>
+                <h2>Wady</h2>
+                <ul>
+                    <li class="t">Zajmuje wertykalną przestrzeń; może wymagać przewijania na małych ekranach.</li>
+                    <li class="t">Może zmniejszać przestrzeń treści głównej na wąskich widokach.</li>
+                </ul>
+                <h2>Porady praktyczne</h2>
+                <ul>
+                    <li class="t">Rozważ zastosowanie rozwijanego/zwijanego menu (accordion) dla długich list.</li>
+                    <li class="t">Na urządzeniach mobilnych często lepiej przełączyć menu pionowe na hamburger / menu wysuwane.</li>
+                    <li class="t">Zadbaj o dostępność: używaj porządnych kontrastów, focus styles i semantycznych znaczników.</li>
+                </ul>
+                <p>
+                    Pamiętaj, że układ można łatwo zmienić za pomocą CSS (np. <code>flex-direction</code>), dzięki czemu ten sam kod HTML może działać zarówno jako menu pionowe, jak i poziome.
+                </p>
+            </article>
+        </main>
+        <footer id="footer">
+            &copy; Hubert Filas 2026 &ndash; Samouczek HTML i CSS<br>
+            Źródła: Własne
+        </footer>
+        <script src="../../script.js"></script>
+        <!-- Highlight.js -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+        <script>
+            hljs.highlightAll();
+        </script>
+    </body>
+</html>

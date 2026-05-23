@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pl">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Samouczek CSS</title>
+        <link rel="icon" type="image/x-icon" href="../../img/Logo.png">
+        <link rel="stylesheet" href="../../style.css">
+        <style>
+            :root {
+                --MainColor: #1572B6;
+                --SideColor: #125d92;
+                --DarkColor: #0b3a5c;
+            }
+            .t {
+                color: black;
+            }
+        </style>
+        <script>let type = 0;</script>
+        <!-- Highlight.js Theme -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
+    </head>
+    <body>
+        <header id="header">
+            <ul>
+                <li><a onclick="openMP('../../index.html')" href="#">Strona Główna</a></li>
+                <li><a onclick="openHTML('../HTML/html-intro.html')" href="#">HTML</a></li>
+                <li><a href="#">CSS</a></li>
+            </ul>
+        </header>
+        <main>
+            <nav id="nav">
+                <ul id="subpages">
+                </ul>
+            </nav>
+            <article id="article">
+                <a onclick="showNav()" id="shownavbutton" href="#" style="color: white; background-color: var(--SideColor); padding: 10px; position: fixed; left: 0; border-radius: 0 10px 10px 0;">&gt;</a>
+                <!-- Artykuł poniżej -->
+
+                <h1>Menu Poziome</h1>
+                    <p>
+                        Menu poziome to nawigacja ustawiona w jednym wierszu. Często używa się do niego listy <code>&lt;ul&gt;</code> z elementami <code>&lt;li&gt;</code> i linkami <code>&lt;a&gt;</code>.
+                    </p>
+                    <h2>Jak zrobić menu poziome?</h2>
+                    <p>
+                        Najłatwiej utworzyć listę i zmienić domyślne wyświetlanie elementów <code>&lt;li&gt;</code>. Dwa popularne sposoby to <code>display: inline-block</code> oraz <code>display: flex</code>.
+                    </p>
+                    <div class="example-grid">
+                        <div class="example-box example-code">
+                            <h3>Kod</h3>
+                            <pre><code class="language-html">&lt;nav&gt;
+      &lt;ul&gt;
+        &lt;li&gt;&lt;a href="#"&gt;Home&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#"&gt;O nas&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#"&gt;Kontakt&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+&lt;/nav&gt;
+</code></pre>
+<pre><code class="language-css">
+nav ul {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: inherit;
+  padding: 0.5rem 1rem;
+}
+
+nav ul li a:hover{
+  background-color: #125d92;
+}
+</code></pre>
+                        </div>
+                        <div class="example-box example-result t" style="padding:1rem; background:#f7f7f7; border:1px solid #ccc;">
+                            <h3>Wynik</h3>
+                            <nav style="background-color: #0000; width: fit-content;">
+                                <ul style="display: flex; gap: 1rem; list-style: none; padding: 0; margin: 0;">
+                                    <li><a href="#" style="text-decoration:none; color:black; padding:0.5rem 1rem;">Home</a></li>
+                                    <li><a href="#" style="text-decoration:none; color:black; padding:0.5rem 1rem;">O nas</a></li>
+                                    <li><a href="#" style="text-decoration:none; color:black; padding:0.5rem 1rem;">Kontakt</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                    <h2>Zalety menu poziomego</h2>
+                    <ul>
+                        <li class="t">Przejrzysta nawigacja dla stron o niewielu elementach.</li>
+                        <li class="t">Dobrze wygląda w nagłówku strony i na dużych ekranach.</li>
+                        <li class="t">Łatwe do zrealizowania przy pomocy CSS.</li>
+                    </ul>
+                    <h2>Wady menu poziomego</h2>
+                    <ul>
+                        <li class="t">Może zajmować dużo miejsca przy wielu pozycjach.</li>
+                        <li class="t">Na mniejszych ekranach wymaga responsywnej zmiany układu.</li>
+                        <li class="t">Linki o długich nazwach mogą się nie mieścić w jednym wierszu.</li>
+                    </ul>
+                    <h2>Praktyczne uwagi</h2>
+                    <p>
+                        Warto użyć semantycznego <code>&lt;nav&gt;</code> oraz usunąć punktor listy przy pomocy <code>list-style: none</code>. Dla lepszej dostępności dobrze jest dodać czytelny odstęp i kontrast linków.
+                    </p>
+            </article>
+        </main>
+        <footer id="footer">
+            &copy; Hubert Filas 2026 &ndash; Samouczek HTML i CSS<br>
+            Źródła: Własne
+        </footer>
+        <script src="../../script.js"></script>
+        <!-- Highlight.js -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+        <script>
+            hljs.highlightAll();
+        </script>
+    </body>
+</html>
