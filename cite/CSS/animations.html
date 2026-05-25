@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="pl">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Samouczek CSS</title>
+        <link rel="icon" type="image/x-icon" href="../../img/Logo.png">
+        <link rel="stylesheet" href="../../style.css">
+        <style>
+            :root {
+                --MainColor: #1572B6;
+                --SideColor: #125d92;
+                --DarkColor: #0b3a5c;
+            }
+
+            .t {
+                color: black;
+            }
+        </style>
+        <script>let type = 0;</script>
+        <!-- Highlight.js Theme -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
+    </head>
+    <body>
+        <header id="header">
+            <ul>
+                <li><a onclick="openMP('../../index.html')" href="#">Strona Główna</a></li>
+                <li><a onclick="openHTML('../HTML/html-intro.html')" href="#">HTML</a></li>
+                <li><a href="#">CSS</a></li>
+            </ul>
+        </header>
+        <main>
+            <nav id="nav">
+                <ul id="subpages">
+                </ul>
+            </nav>
+            <article id="article">
+                <a onclick="showNav()" id="shownavbutton" href="#" style="color: white; background-color: var(--SideColor); padding: 10px; position: fixed; left: 0; border-radius: 0 10px 10px 0;">&gt;</a>
+                <!-- Artykuł poniżej -->
+
+                <h1>Animacje</h1>
+                <p>
+                    W CSS animacje pozwalają ożywić elementy strony. Umożliwiają zmianę wartości właściwości w czasie, tworzenie płynnych efektów i przyciąganie uwagi użytkownika.
+                </p>
+                <h2>Animacje CSS vs przejścia</h2>
+                <p>
+                    <strong>Przejścia</strong> (<code>transition</code>) działają, gdy wartość właściwości zmienia się ręcznie, np. po najechaniu kursorem. <strong>Animacje</strong> (<code>@keyframes</code>) definiują sekwencję klatek, która odtwarza się automatycznie lub w pętli.
+                </p>
+                <h2>Transformacje</h2>
+                <p>
+                    Właściwość <code>transform</code> zmienia położenie, skalę, obrót lub nachylenie elementu. Jest często używana razem z animacjami, ponieważ działa wydajnie i nie przesuwa układu innych elementów.
+                </p>
+                <h3>Typowe transformacje</h3>
+                <ul>
+                    <li><code>translate(x, y)</code> &ndash; przesunięcie elementu w osi X i Y.</li>
+                    <li><code>scale(x, y)</code> &ndash; zmiana rozmiaru elementu.</li>
+                    <li><code>rotate(angle)</code> &ndash; obrót elementu.</li>
+                    <li><code>skew(x, y)</code> &ndash; pochylanie elementu.</li>
+                </ul>
+                <div class="example-grid">
+                    <div class="example-box example-code">
+                        <h3>Kod</h3>
+                        <pre><code class="language-css">.box {
+  width: 120px;
+  height: 120px;
+  background: #1572B6;
+  color: white;
+  display: grid;
+  place-items: center;
+  transform: translateX(0) rotate(0deg);
+  animation: moveRotate 4s infinite ease-in-out;
+}
+
+@keyframes moveRotate {
+  0%   { transform: translateX(0) rotate(0deg); }
+  50%  { transform: translateX(120px) rotate(180deg); }
+  100% { transform: translateX(0) rotate(360deg); }
+}
+
+.box:hover {
+  animation-play-state: paused;
+}</code></pre>
+                    </div>
+                    <div class="example-box example-result t" style="padding:1rem; background:#f7f7f7; border:1px solid #ccc; min-height:240px;">
+                        <h3>Wynik</h3>
+                        <div style="position:relative; height:180px;">
+                            <div style="width:120px; height:120px; background:#1572B6; color:white; display:grid; place-items:center; position:absolute; left:0; top:30px; animation: moveRotate 4s infinite ease-in-out;">
+                                Tak</div>
+                        </div>
+                        <style>
+                            @keyframes moveRotate {
+                                0% { transform: translateX(0) rotate(0deg); }
+                                50% { transform: translateX(120px) rotate(180deg); }
+                                100% { transform: translateX(0) rotate(360deg); }
+                            }
+                        </style>
+                    </div>
+                </div>
+                <h2>Podstawowe właściwości animacji</h2>
+                <ul>
+                    <li><code>animation-name</code> &ndash; nazwa animacji zdefiniowanej w <code>@keyframes</code>.</li>
+                    <li><code>animation-duration</code> &ndash; czas trwania jednej pętli animacji.</li>
+                    <li><code>animation-timing-function</code> &ndash; krzywa przyspieszania, np. <code>ease</code>, <code>linear</code>, <code>ease-in-out</code>.</li>
+                    <li><code>animation-delay</code> &ndash; opóźnienie przed rozpoczęciem animacji.</li>
+                    <li><code>animation-iteration-count</code> &ndash; liczba powtórzeń lub <code>infinite</code>.</li>
+                    <li><code>animation-direction</code> &ndash; kierunek, np. <code>normal</code>, <code>reverse</code>, <code>alternate</code>.</li>
+                    <li><code>animation-fill-mode</code> &ndash; jak animacja wpływa na element poza czasem trwania, np. <code>forwards</code>.</li>
+                    <li><code>animation-play-state</code> &ndash; kontrola odtwarzania, np. <code>paused</code> lub <code>running</code>.</li>
+                </ul>
+                <h2>Ważne uwagi</h2>
+                <ul>
+                    <li>Animacje najlepiej działają na właściwościach transform i opacity, bo przeglądarki mogą je przyspieszać sprzętowo.</li>
+                    <li>Unikaj animowania właściwości layoutu, takich jak <code>width</code>, <code>height</code> lub <code>margin</code>, jeśli chcesz płynności.</li>
+                    <li>Animacje mogą utrudniać dostępność, więc zawsze rozważ stop lub wyłączanie ich dla użytkowników preferujących redukcję ruchu.</li>
+                </ul>
+                <h2>Przykład użycia transform z animacją</h2>
+                <p>
+                    Połączenie <code>transform</code> i <code>@keyframes</code> pozwala na płynną zmianę pozycji, obrotu i rozmiaru jednocześnie.
+                </p>
+                <div class="example-grid">
+                    <div class="example-box example-code">
+                        <h3>Kod</h3>
+                        <pre><code class="language-css">.dot {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #E34F26;
+  animation: bounceScale 2s infinite ease-in-out;
+}
+
+@keyframes bounceScale {
+  0%   { transform: translateY(0) scale(1); }
+  50%  { transform: translateY(-30px) scale(1.2); }
+  100% { transform: translateY(0) scale(1); }
+}</code></pre>
+                    </div>
+                    <div class="example-box example-result t" style="padding:1rem; background:#f7f7f7; border:1px solid #ccc; min-height:180px;">
+                        <h3>Wynik</h3>
+                        <div style="display:flex; justify-content:center; align-items:center; height:140px;">
+                            <div style="width:60px; height:60px; border-radius:50%; background:#E34F26; animation: bounceScale 2s infinite ease-in-out;"></div>
+                        </div>
+                        <style>
+                            @keyframes bounceScale {
+                                0%   { transform: translateY(0) scale(1); }
+                                50%  { transform: translateY(-30px) scale(1.2); }
+                                100% { transform: translateY(0) scale(1); }
+                            }
+                        </style>
+                    </div>
+                </div>
+                <p>
+                    Animacje CSS dają duże możliwości: od prostych efektów hover po całe sekwencje ruchu. Warto zacząć od transform i opacity, a następnie dopasowywać tempo i opóźnienia.
+                </p>
+            </article>
+        </main>
+        <footer id="footer">
+            &copy; Hubert Filas 2026 &ndash; Samouczek HTML i CSS<br>
+            Źródła: Własne
+        </footer>
+        <script src="../../script.js"></script>
+        <!-- Highlight.js -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+        <script>
+            hljs.highlightAll();
+        </script>
+    </body>
+</html>

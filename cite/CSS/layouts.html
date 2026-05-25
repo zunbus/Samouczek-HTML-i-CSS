@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="pl">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Samouczek CSS</title>
+        <link rel="icon" type="image/x-icon" href="../../img/Logo.png">
+        <link rel="stylesheet" href="../../style.css">
+        <style>
+            :root {
+                --MainColor: #1572B6;
+                --SideColor: #125d92;
+                --DarkColor: #0b3a5c;
+            }
+            .t {
+                color: black;
+            }
+        </style>
+        <script>let type = 0;</script>
+        <!-- Highlight.js Theme -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
+    </head>
+    <body>
+        <header id="header">
+            <ul>
+                <li><a onclick="openMP('../../index.html')" href="#">Strona Główna</a></li>
+                <li><a onclick="openHTML('../HTML/html-intro.html')" href="#">HTML</a></li>
+                <li><a href="#">CSS</a></li>
+            </ul>
+        </header>
+        <main>
+            <nav id="nav">
+                <ul id="subpages">
+                </ul>
+            </nav>
+            <article id="article">
+                <a onclick="showNav()" id="shownavbutton" href="#" style="color: white; background-color: var(--SideColor); padding: 10px; position: fixed; left: 0; border-radius: 0 10px 10px 0;">&gt;</a>
+                <!-- Artykuł poniżej -->
+
+                <h1>Układy</h1>
+                </h1>
+
+                <p>
+                    Układ strony określa rozmieszczenie elementów takich jak nagłówek, menu,
+                    treść oraz stopka. W nowoczesnym CSS najczęściej wykorzystuje się
+                    <code>flex</code> lub <code>grid</code> do budowania układów kolumnowych.
+                </p>
+
+                <h2>Najpopularniejsze układy</h2>
+
+                <ul>
+                    <li class="t"><strong>1 kolumna</strong> &ndash; prosty układ z jedną główną treścią.</li>
+                    <li class="t"><strong>2 kolumny</strong> &ndash; treść + panel boczny (sidebar).</li>
+                    <li class="t"><strong>3 kolumny</strong> &ndash; dwa panele boczne i główna zawartość.</li>
+                </ul>
+
+                <h2>Układ jednokolumnowy</h2>
+
+                <p>
+                    Najprostszy układ strony. Świetnie sprawdza się na urządzeniach mobilnych
+                    oraz blogach.
+                </p>
+
+                <div class="example-grid">
+
+                    <div class="example-box example-code">
+                        <h3>Kod</h3>
+
+            <pre><code class="language-html">&lt;div class="layout"&gt;
+    &lt;header&gt;Header&lt;/header&gt;
+
+    &lt;main&gt;
+        Główna treść strony
+    &lt;/main&gt;
+
+    &lt;footer&gt;Footer&lt;/footer&gt;
+&lt;/div&gt;
+</code></pre>
+
+            <pre><code class="language-css">.layout{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+
+header, main, footer{
+  padding:20px;
+}
+
+header{
+    background:#6fa8dc;
+}
+
+main{
+  background:#f4f4f4;
+}
+
+footer{
+  background:#999;
+}
+            </code></pre>
+                    </div>
+
+                    <div class="example-box example-result t"
+                        style="padding:1rem; background:#f7f7f7; border:1px solid #ccc;">
+
+                        <h3>Wynik</h3>
+
+                        <div style="display:flex; flex-direction:column; gap:10px;">
+
+                            <header style="background:#6fa8dc; padding:20px; color:white;">
+                                Header
+                            </header>
+
+                            <main style="background:#f4f4f4; padding:30px; color:black;">
+                                Główna treść strony
+                            </main>
+
+                            <footer style="background:#999; padding:20px; color:white; position: static; width: 100%;">
+                                Footer
+                            </footer>
+
+                        </div>
+
+                    </div>
+                </div>
+
+                <h2>Układ dwukolumnowy</h2>
+
+                <p>
+                    Układ dwukolumnowy często zawiera główną treść oraz boczny panel z menu,
+                    reklamami lub dodatkowymi informacjami.
+                </p>
+
+                <div class="example-grid">
+
+                    <div class="example-box example-code">
+                        <h3>Kod</h3>
+
+            <pre><code class="language-html">&lt;div class="layout"&gt;
+
+    &lt;header&gt;Header&lt;/header&gt;
+
+    &lt;div class="container"&gt;
+        &lt;main&gt;Treść&lt;/main&gt;
+        &lt;aside&gt;Sidebar&lt;/aside&gt;
+    &lt;/div&gt;
+
+    &lt;footer&gt;Footer&lt;/footer&gt;
+
+&lt;/div&gt;
+            </code></pre>
+
+            <pre><code class="language-css">.container{
+    display:flex;
+    gap:10px;
+}
+
+main{
+    flex:3;
+}
+
+aside{
+    flex:1;
+}
+            </code></pre>
+
+                    </div>
+
+                    <div class="example-box example-result t"
+                        style="padding:1rem; background:#f7f7f7; border:1px solid #ccc;">
+
+                        <h3>Wynik</h3>
+
+                        <div style="display:flex; flex-direction:column; gap:10px;">
+
+                            <header style="background:#6fa8dc; padding:20px; color:white;">
+                                Header
+                            </header>
+
+                            <div style="display:flex; gap:10px;">
+
+                                <main style="flex:3; background:#f4f4f4; padding:30px; color:black;">
+                                    Główna treść
+                                </main>
+
+                                <aside style="flex:1; background:#d9ead3; padding:30px; color:black;">
+                                    Sidebar
+                                </aside>
+
+                            </div>
+
+                            <footer style="background:#999; padding:20px; color:white; position: static; width: 100%;">
+                                Footer
+                            </footer>
+
+                        </div>
+
+                    </div>
+                </div>
+
+                <h2>Układ trójkolumnowy</h2>
+
+                <p>
+                    Układ trójkolumnowy umożliwia dodanie dwóch paneli bocznych po obu stronach
+                    głównej treści.
+                </p>
+
+                <div class="example-grid">
+
+                    <div class="example-box example-code">
+                        <h3>Kod</h3>
+
+            <pre><code class="language-html">&lt;div class="layout"&gt;
+
+    &lt;header&gt;Header&lt;/header&gt;
+
+    &lt;div class="container"&gt;
+
+        &lt;aside&gt;Lewe menu&lt;/aside&gt;
+
+        &lt;main&gt;Treść&lt;/main&gt;
+
+        &lt;aside&gt;Prawe menu&lt;/aside&gt;
+
+    &lt;/div&gt;
+
+    &lt;footer&gt;Footer&lt;/footer&gt;
+
+&lt;/div&gt;
+            </code></pre>
+
+            <pre><code class="language-css">.container{
+    display:flex;
+    gap:10px;
+}
+
+aside{
+    flex:1;
+}
+
+main{
+    flex:2;
+}
+            </code></pre>
+
+                    </div>
+
+                    <div class="example-box example-result t"
+                        style="padding:1rem; background:#f7f7f7; border:1px solid #ccc;">
+
+                        <h3>Wynik</h3>
+
+                        <div style="display:flex; flex-direction:column; gap:10px;">
+
+                            <header style="background:#6fa8dc; padding:20px; color:white;">
+                                Header
+                            </header>
+
+                            <div style="display:flex; gap:10px;">
+
+                                <aside style="flex:1; background:#d9ead3; padding:30px; color:black;">
+                                    Lewe menu
+                                </aside>
+
+                                <main style="flex:2; background:#f4f4f4; padding:30px; color:black;">
+                                    Główna treść
+                                </main>
+
+                                <aside style="flex:1; background:#ffe599; padding:30px; color:black;">
+                                    Prawe menu
+                                </aside>
+
+                            </div>
+
+                            <footer style="background:#999; padding:20px; color:white; position: static; width: 100%;">
+                                Footer
+                            </footer>
+
+                        </div>
+
+                    </div>
+                </div>
+
+                <h2>Dlaczego warto używać Flexbox?</h2>
+
+                <p>
+                    Flexbox bardzo ułatwia tworzenie nowoczesnych układów stron. Dzięki niemu
+                    można łatwo ustawiać kolumny, wyrównywać elementy oraz tworzyć responsywne
+                    layouty działające na różnych urządzeniach.
+                </p>
+
+                <h2>Podsumowanie</h2>
+
+                <ul>
+                    <li class="t"><strong>1 kolumna</strong> &ndash; prostota i czytelność.</li>
+                    <li class="t"><strong>2 kolumny</strong> &ndash; najczęściej używany układ stron.</li>
+                    <li class="t"><strong>3 kolumny</strong> &ndash; większa ilość informacji na ekranie.</li>
+                </ul>
+
+                <p>
+                    Współczesne strony internetowe najczęściej buduje się przy użyciu
+                    <code>flex</code> lub <code>grid</code>, ponieważ zapewniają dużą kontrolę
+                    nad rozmieszczeniem elementów.
+                </p>
+            </article>
+        </main>
+        <footer id="footer">
+            &copy; Hubert Filas 2026 &ndash; Samouczek HTML i CSS<br>
+            Źródła: Własne
+        </footer>
+        <script src="../../script.js"></script>
+        <!-- Highlight.js -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+        <script>
+            hljs.highlightAll();
+        </script>
+    </body>
+</html>

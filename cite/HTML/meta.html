@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pl">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Samouczek HTML</title>
+        <link rel="icon" type="image/x-icon" href="../../img/Logo.png">
+        <link rel="stylesheet" href="../../style.css">
+        <style>
+            :root {
+                --MainColor: #E34F26;
+                --SideColor: #a73a1b;
+                --DarkColor: #772914;
+            }
+            .t {
+                color: black;
+            }
+            
+        </style>
+        <!-- Highlight.js Theme -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
+        <script>let type = 1;</script>
+    </head>
+    <body>
+        <header id="header">
+            <ul>
+                <li><a onclick="openMP('../../index.html')" href="#">Strona Główna</a></li>
+                <li><a href="#">HTML</a></li>
+                <li><a onclick="openCSS('../CSS/css-intro.html')" href="#">CSS</a></li>
+            </ul>
+        </header>
+        <main>
+            <nav id="nav">
+                <ul id="subpages">
+                </ul>
+            </nav>
+            <article id="article">
+                <a onclick="showNav()" id="shownavbutton" href="#" style="color: white; background-color: var(--SideColor); padding: 10px; position: fixed; left: 0; border-radius: 0 10px 10px 0;">&gt;</a>
+                <!-- Artykuł poniżej -->
+
+                <h1>Znacznik &lt;meta&gt;</h1>
+                <p>
+                    Znacznik <code>&lt;meta&gt;</code> umieszcza się w sekcji <code>&lt;head&gt;</code> dokumentu HTML. Nie jest on widoczny na stronie, ale przekazuje przeglądarce i wyszukiwarkom ważne informacje o dokumencie.
+                </p>
+                <h2>Główne zastosowania</h2>
+                <ul>
+                    <li>ustawienie kodowania znaków (<code>charset</code>);</li>
+                    <li>kontrola skalowania na urządzeniach mobilnych (<code>viewport</code>);</li>
+                    <li>opis strony i słowa kluczowe dla SEO (<code>description</code>, <code>keywords</code>);</li>
+                    <li>informacja o autorze, instrukcje do robotów wyszukiwarek i ogólne metadane;</li>
+                    <li>łączenie z ikoną strony (<code>icon</code>) i kolorem motywu w przeglądarce.</li>
+                </ul>
+                <div class="example-grid">
+                    <div class="example-box example-code">
+                        <h3>Kod</h3>
+                        <pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang="pl"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+  &lt;meta name="description" content="Krótki opis strony dla wyszukiwarek."&gt;
+  &lt;meta name="robots" content="index, follow"&gt;
+  &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;
+  &lt;title&gt;Przykład meta&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;p&gt;Treść strony.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                    </div>
+                    <div class="example-box example-result t" style="padding:1rem; background:#f7f7f7; border:1px solid #ccc;">
+                        <h3>Wynik</h3>
+                        <p style="margin:0; color:black;">Przykład meta pokazuje, jak ustawić kodowanie, viewport i opis strony. Ten tekst nie zmienia wyglądu strony, ale wpływa na sposób wyświetlania i indeksowania.</p>
+                    </div>
+                </div>
+                <h2>Najważniejsze atrybuty</h2>
+                <ul>
+                    <li><code>charset</code> &ndash; ustawia zestaw znaków, np. <code>UTF-8</code>. Powinien być jednym z pierwszych elementów w <code>&lt;head&gt;</code>.</li>
+                    <li><code>name</code> oraz <code>content</code> &ndash; definiują metadane, np. <code>description</code>, <code>keywords</code>, <code>author</code>, <code>robots</code>.</li>
+                    <li><code>http-equiv</code> &ndash; wysyła nagłówki HTTP, np. <code>refresh</code>, <code>content-type</code>, <code>X-UA-Compatible</code>.</li>
+                    <li><code>viewport</code> &ndash; kontroluje skalowanie i szerokość widoku na urządzeniach mobilnych.</li>
+                </ul>
+                <h2>Przykłady meta</h2>
+                <ul>
+                    <li><code>&lt;meta charset="UTF-8"&gt;</code> &ndash; deklaruje kodowanie strony.</li>
+                    <li><code>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</code> &ndash; zwiększa responsywność na telefonach.</li>
+                    <li><code>&lt;meta name="description" content="Opis strony"&gt;</code> &ndash; tekst, który może wyświetlać się w wynikach wyszukiwania.</li>
+                    <li><code>&lt;meta name="robots" content="index, follow"&gt;</code> &ndash; mówi robotom, czy indeksować stronę.</li>
+                    <li><code>&lt;meta http-equiv="refresh" content="10;url=https://example.com"&gt;</code> &ndash; przekierowuje po 10 sekundach.</li>
+                </ul>
+                <h2>Meta a SEO i przeglądarki</h2>
+                <p>
+                    Znacznik <code>&lt;meta&gt;</code> nie wpływa bezpośrednio na wygląd strony, ale ma duże znaczenie dla wyszukiwarek, urządzeń mobilnych i kompatybilności. Dobrze napisany opis i poprawne meta pomagają poprawić pozycję w wynikach wyszukiwania.
+                </p>
+                <h2>Ważne uwagi</h2>
+                <ul>
+                    <li>Każdy znacznik <code>&lt;meta&gt;</code> powinien znajdować się w <code>&lt;head&gt;</code>.</li>
+                    <li>Unikaj duplikowania tych samych metadanych.</li>
+                    <li><code>charset</code> ustaw jako pierwszy element w <code>&lt;head&gt;</code> przed jakimikolwiek treściami tekstowymi.</li>
+                    <li>Użyj <code>viewport</code>, aby strona dobrze działała na urządzeniach mobilnych.</li>
+                </ul>
+            </article>
+        </main>
+        <footer id="footer">
+            &copy; Hubert Filas 2026 &ndash; Samouczek HTML i CSS<br>
+            Źródła: Własne
+        </footer>
+        <script src="../../script.js"></script>
+        <!-- Highlight.js -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+        <script>
+            hljs.highlightAll();
+        </script>
+    </body>
+</html>

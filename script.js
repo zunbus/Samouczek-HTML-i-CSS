@@ -20,6 +20,10 @@ const HTMLpages = [
     link: "StyleTags.html"
   },
   {
+    title: "Znacznik &lt;meta&gt;",
+    link: "meta.html"
+  },
+  {
     title: "Listy",
     link: "lists.html"
   },
@@ -38,6 +42,18 @@ const HTMLpages = [
   {
     title: "Elementy Semantyczne",
     link: "semantic.html"
+  },
+  {
+    title: "Formularze",
+    link: "forms.html"
+  },
+  {
+    title: "Multimedia",
+    link: "Media.html"
+  },
+  {
+    title: "SVG",
+    link: "svg.html"
   }
 ];
 
@@ -59,12 +75,32 @@ const CSSpages = [
     link: "Box.html"
   },
   {
+    title: "Układy",
+    link: "layouts.html"
+  },
+  {
     title: "Menu Poziome",
     link: "Horizontal.html"
   },
   {
     title: "Menu Pionowe",
     link: "Vertical.html"
+  },
+  {
+    title: "Pozycjonowanie",
+    link: "Position.html"
+  },
+  {
+    title: "Overflow",
+    link: "Overflow.html"
+  },
+  {
+    title: "Responsywność",
+    link: "responsivity.html"
+  },
+  {
+    title: "Animacje",
+    link: "animations.html"
   }
 ];
 

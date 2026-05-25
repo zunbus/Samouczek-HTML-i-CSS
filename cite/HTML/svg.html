@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pl">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Samouczek HTML</title>
+        <link rel="icon" type="image/x-icon" href="../../img/Logo.png">
+        <link rel="stylesheet" href="../../style.css">
+        <style>
+            :root {
+                --MainColor: #E34F26;
+                --SideColor: #a73a1b;
+                --DarkColor: #772914;
+            }
+            .t {
+                color: black;
+            }
+            
+        </style>
+        <!-- Highlight.js Theme -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
+        <script>let type = 1;</script>
+    </head>
+    <body>
+        <header id="header">
+            <ul>
+                <li><a onclick="openMP('../../index.html')" href="#">Strona Główna</a></li>
+                <li><a href="#">HTML</a></li>
+                <li><a onclick="openCSS('../CSS/css-intro.html')" href="#">CSS</a></li>
+            </ul>
+        </header>
+        <main>
+            <nav id="nav">
+                <ul id="subpages">
+                </ul>
+            </nav>
+            <article id="article">
+                <a onclick="showNav()" id="shownavbutton" href="#" style="color: white; background-color: var(--SideColor); padding: 10px; position: fixed; left: 0; border-radius: 0 10px 10px 0;">&gt;</a>
+                <!-- Artykuł poniżej -->
+
+                <h1>SVG</h1>
+                <p>
+                    SVG to grafika wektorowa zapisana w XML. W przeciwieństwie do obrazów rastrowych (JPEG, PNG) SVG skalują się bez utraty jakości i można je modyfikować za pomocą CSS oraz JavaScript.
+                </p>
+                <h2>Co to jest SVG?</h2>
+                <p>
+                    SVG (Scalable Vector Graphics) to tekstowy format opisu kształtów: linii, krzywych, prostokątów, kół, gradientów oraz tekstu. Plik SVG może być osadzony bezpośrednio w HTML lub załadowany jako obrazek.</p>
+                <h2>Dlaczego warto używać SVG?</h2>
+                <ul>
+                    <li>skalowalność bez utraty jakości;</li>
+                    <li>mały rozmiar przy prostych ilustracjach;</li>
+                    <li>możliwość animacji i stylowania;</li>
+                    <li>kompatybilność z CSS i DOM;</li>
+                    <li>dobry do ikon, wykresów i logotypów.</li>
+                </ul>
+                <div class="example-grid">
+                    <div class="example-box example-code">
+                        <h3>Kod</h3>
+                        <pre><code class="language-html">&lt;svg width="200" height="120" viewBox="0 0 200 120" xmlns="http://www.w3.org/2000/svg"&gt;
+  &lt;title&gt;Prosta grafika SVG&lt;/title&gt;
+  &lt;desc&gt;Niebieski prostokąt i czerwone koło z tekstem.&lt;/desc&gt;
+  &lt;rect x="10" y="10" width="180" height="80" rx="12" fill="#1572B6" /&gt;
+  &lt;circle cx="100" cy="50" r="30" fill="#E34F26" /&gt;
+  &lt;text x="100" y="58" text-anchor="middle" fill="#fff" font-size="16" font-family="Arial, sans-serif"&gt;SVG&lt;/text&gt;
+&lt;/svg&gt;
+
+&lt;img src="../../img/Logo.png" alt="Przykładowy logotyp" width="160" /&gt;
+
+&lt;svg width="200" height="120" viewBox="0 0 200 120" xmlns="http://www.w3.org/2000/svg"&gt;
+  &lt;defs&gt;
+    &lt;linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="0%"&gt;
+      &lt;stop offset="0%" stop-color="#ffb347" /&gt;
+      &lt;stop offset="100%" stop-color="#ffcc33" /&gt;
+    &lt;/linearGradient&gt;
+  &lt;/defs&gt;
+  &lt;circle cx="100" cy="60" r="45" fill="url(#grad)" /&gt;
+  &lt;path d="M60,90 Q100,20 140,90" stroke="#333" stroke-width="4" fill="none" /&gt;
+&lt;/svg&gt;</code></pre>
+                    </div>
+                    <div class="example-box example-result t" style="padding:1rem; background:#f7f7f7; border:1px solid #ccc;">
+                        <h3>Wynik</h3>
+                        <div style="display:grid; gap:1rem; font-family:Arial, sans-serif; color:#111;">
+                            <div style="border:1px solid #999; padding:0.75rem; background:#fff; width:220px;">
+                                <svg width="200" height="120" viewBox="0 0 200 120" xmlns="http://www.w3.org/2000/svg">
+                                    <title>Prosta grafika SVG</title>
+                                    <desc>Niebieski prostokąt i czerwone koło z tekstem.</desc>
+                                    <rect x="10" y="10" width="180" height="80" rx="12" fill="#1572B6" />
+                                    <circle cx="100" cy="50" r="30" fill="#E34F26" />
+                                    <text x="100" y="58" text-anchor="middle" fill="#fff" font-size="16" font-family="Arial, sans-serif">SVG</text>
+                                </svg>
+                                <p style="margin:0.5rem 0 0 0;">SVG osadzone bezpośrednio w HTML.</p>
+                            </div>
+                            <div style="border:1px solid #999; padding:0.75rem; background:#fff; width:220px;">
+                                <svg width="200" height="120" viewBox="0 0 200 120" xmlns="http://www.w3.org/2000/svg">
+                                    <defs>
+                                        <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="0%">
+                                            <stop offset="0%" stop-color="#ffb347" />
+                                            <stop offset="100%" stop-color="#ffcc33" />
+                                        </linearGradient>
+                                    </defs>
+                                    <circle cx="100" cy="60" r="45" fill="url(#grad2)" />
+                                    <path d="M60,90 Q100,20 140,90" stroke="#333" stroke-width="4" fill="none" />
+                                </svg>
+                                <p style="margin:0.5rem 0 0 0;">SVG z gradientem i krzywą.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <h2>Jak używać SVG w HTML</h2>
+                <p>
+                    SVG można wstawić na kilka sposobów:
+                </p>
+                <ul>
+                    <li>bezpośrednio w HTML za pomocą znacznika <code>&lt;svg&gt;</code>;</li>
+                    <li>jako obrazek w <code>&lt;img&gt;</code>;</li>
+                    <li>jako tło CSS z <code>background-image</code>;</li>
+                    <li>za pomocą <code>&lt;object&gt;</code>, <code>&lt;embed&gt;</code> lub <code>&lt;iframe&gt;</code>;</li>
+                    <li>jako zewnętrzny plik <code>.svg</code> z atrybutem <code>src</code> lub <code>xlink:href</code>.</li>
+                </ul>
+                <h2>Diagram elementów SVG</h2>
+                <p>
+                    W SVG rysujemy kształty za pomocą prostych elementów: <code>&lt;rect&gt;</code>, <code>&lt;circle&gt;</code>, <code>&lt;ellipse&gt;</code>, <code>&lt;line&gt;</code>, <code>&lt;polyline&gt;</code>, <code>&lt;polygon&gt;</code>, <code>&lt;path&gt;</code> oraz <code>&lt;text&gt;</code>.</p>
+                <h2>Przykłady elementów SVG</h2>
+                <ul>
+                    <li><code>&lt;rect&gt;</code> &ndash; prostokąt z opcjonalnym zaokrągleniem narożników <code>rx</code>/<code>ry</code>.</li>
+                    <li><code>&lt;circle&gt;</code> &ndash; koło z <code>cx</code>, <code>cy</code> i <code>r</code>.</li>
+                    <li><code>&lt;path&gt;</code> &ndash; najpotężniejszy kształt tworzony ścieżkami.</li>
+                    <li><code>&lt;text&gt;</code> &ndash; tekst w grafice SVG.</li>
+                    <li><code>&lt;linearGradient&gt;</code> / <code>&lt;radialGradient&gt;</code> &ndash; gradienty wypełnień.</li>
+                </ul>
+                <h2>Dostępność SVG</h2>
+                <ul>
+                    <li>dodaj <code>&lt;title&gt;</code> i <code>&lt;desc&gt;</code> w SVG wewnętrznym;</li>
+                    <li>używaj <code>aria-label</code> lub <code>role="img"</code>, gdy to potrzebne;</li>
+                    <li>jeśli SVG jest dekoracją, użyj <code>aria-hidden="true"</code> lub pustego <code>alt=""</code> przy <code>&lt;img&gt;</code>;</li>
+                    <li>unikaj osadzania tekstu, który musi być tłumaczony lub czytany przez czytniki ekranu.</li>
+                </ul>
+                <h2>Zastosowania SVG</h2>
+                <ul>
+                    <li>ikony i logotypy;</li>
+                    <li>diagramy i wykresy;</li>
+                    <li>animacje i efekty graficzne;</li>
+                    <li>interaktywne mapy i infografiki;</li>
+                    <li>przyciski i elementy interfejsu.</li>
+                </ul>
+                <p>
+                    SVG to potężne narzędzie w HTML. Pozwala tworzyć skalowalne, edytowalne i animowane grafiki, które świetnie nadają się do nowoczesnych stron internetowych.
+                </p>
+            </article>
+        </main>
+        <footer id="footer">
+            &copy; Hubert Filas 2026 &ndash; Samouczek HTML i CSS<br>
+            Źródła: Własne
+        </footer>
+        <script src="../../script.js"></script>
+        <!-- Highlight.js -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+        <script>
+            hljs.highlightAll();
+        </script>
+    </body>
+</html>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="pl">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Samouczek HTML</title>
+        <link rel="icon" type="image/x-icon" href="../../img/Logo.png">
+        <link rel="stylesheet" href="../../style.css">
+        <style>
+            :root {
+                --MainColor: #E34F26;
+                --SideColor: #a73a1b;
+                --DarkColor: #772914;
+            }
+            .t {
+                color: black;
+            }
+            
+        </style>
+        <!-- Highlight.js Theme -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
+        <script>let type = 1;</script>
+    </head>
+    <body>
+        <header id="header">
+            <ul>
+                <li><a onclick="openMP('../../index.html')" href="#">Strona Główna</a></li>
+                <li><a href="#">HTML</a></li>
+                <li><a onclick="openCSS('../CSS/css-intro.html')" href="#">CSS</a></li>
+            </ul>
+        </header>
+        <main>
+            <nav id="nav">
+                <ul id="subpages">
+                </ul>
+            </nav>
+            <article id="article">
+                <a onclick="showNav()" id="shownavbutton" href="#" style="color: white; background-color: var(--SideColor); padding: 10px; position: fixed; left: 0; border-radius: 0 10px 10px 0;">&gt;</a>
+                <!-- Artykuł poniżej -->
+
+                <h1>Multimedia</h1>
+                <p>
+                    Multimedia w HTML to obrazy, dźwięki i wideo, które wzbogacają treść strony. Dzięki nim strona staje się bardziej interaktywna, atrakcyjna i informacyjna.
+                </p>
+                <h2>Podstawowe elementy</h2>
+                <ul>
+                    <li><strong>&lt;img&gt;</strong> – obrazek ze znacznikiem <code>alt</code> dla dostępności.</li>
+                    <li><strong>&lt;picture&gt;</strong> i <strong>&lt;source&gt;</strong> – obrazy responsywne, które wybierają plik w zależności od rozmiaru ekranu.</li>
+                    <li><strong>&lt;audio&gt;</strong> – odtwarzanie dźwięku.</li>
+                    <li><strong>&lt;video&gt;</strong> – odtwarzanie wideo.</li>
+                    <li><strong>&lt;track&gt;</strong> – napisy, podpisy i opisy dla wideo.</li>
+                    <li><strong>&lt;iframe&gt;</strong> – osadzanie innych stron lub odtwarzaczy zewnętrznych.</li>
+                    <li><strong>&lt;embed&gt;</strong> i <strong>&lt;object&gt;</strong> – osadzanie treści zewnętrznych i interaktywnych aplikacji.</li>
+                </ul>
+                <h2>Obrazy i responsywne obrazy</h2>
+                <p>
+                    Element <code>&lt;img&gt;</code> wyświetla grafikę. Atrybut <code>alt</code> opisuje obraz dla czytników ekranu i sytuacji, gdy grafika nie może się załadować.
+                </p>
+                <p>
+                    <code>&lt;picture&gt;</code> z <code>&lt;source&gt;</code> pozwala użyć różnych obrazów zależnie od szerokości ekranu lub formatu. Bardzo przydatne w responsywnym projekcie.
+                </p>
+                <div class="example-grid">
+                    <div class="example-box example-code">
+                        <h3>Kod</h3>
+                        <pre><code class="language-html">&lt;picture&gt;
+  &lt;source srcset="Logo.png" media="(min-width: 800px)"&gt;
+  &lt;source srcset="LogoInverted.png" media="(max-width: 799px)"&gt;
+  &lt;img src="Logo.png" alt="Logo strony" width="300"&gt;
+&lt;/picture&gt;
+
+&lt;audio controls&gt;
+  &lt;source src="audio-sample.mp3" type="audio/mpeg"&gt;
+  &lt;source src="audio-sample.ogg" type="audio/ogg"&gt;
+  Twoja przeglądarka nie obsługuje elementu audio.
+&lt;/audio&gt;
+
+&lt;video controls width="320" poster="../../img/Logo.png" playsinline&gt;
+  &lt;source src="video-sample.mp4" type="video/mp4"&gt;
+  &lt;source src="video-sample.webm" type="video/webm"&gt;
+  &lt;track kind="captions" srclang="pl" label="Polskie napisy" src="captions.vtt"&gt;
+  Twoja przeglądarka nie obsługuje elementu video.
+&lt;/video&gt;</code></pre>
+                    </div>
+                    <div class="example-box example-result t" style="padding:1rem; background:#f7f7f7; border:1px solid #ccc;">
+                        <h3>Wynik</h3>
+                        <div style="display:grid; gap:1rem; font-family:Arial, sans-serif; color:#111;">
+                            <div style="border:1px solid #999; padding:0.5rem; background:#fff; max-width:320px;">
+                                <picture>
+                                    <source srcset="../../img/Logo.png" media="(min-width: 800px)">
+                                    <source srcset="../../img/LogoInverted.png" media="(max-width: 799px)">
+                                    <img src="../../img/Logo.png" alt="Logo strony" width="300">
+                                </picture>
+                            </div>
+                            <div style="border:1px solid #999; padding:0.75rem; background:#fff; max-width:320px;">
+                                <div style="font-size:0.9rem; margin-bottom:0.5rem;">Audio</div>
+                                <audio controls>
+                                    <source src="../../media/exampleaudio.mp3"  type="audio/mpeg">
+                                    Twoja przeglądarka nie obsługuje elementu audio
+                                </audio>
+                            </div>
+                            <div style="border:1px solid #999; padding:0.75rem; background:#fff; max-width:350px;">
+                                <video controls width="320" poster="../../img/Logo.png" playsinline>
+                                    <source src="../../media/examplevideo.mov" type="video/quicktime">
+                                    Twoja przeglądarka nie obsługuje elementu video
+                                </video>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <h2>Atrybuty multimediów</h2>
+                <ul>
+                    <li><code>src</code> – adres zasobu obrazu, dźwięku lub wideo.</li>
+                    <li><code>alt</code> – opis obrazu dla dostępności.</li>
+                    <li><code>width</code> i <code>height</code> – wymiary obrazu lub wideo.</li>
+                    <li><code>controls</code> – wyświetla kontrolki odtwarzania.</li>
+                    <li><code>autoplay</code> – automatyczne odtwarzanie po załadowaniu strony.</li>
+                    <li><code>loop</code> – odtwarzanie w pętli.</li>
+                    <li><code>muted</code> – dźwięk wyciszony domyślnie.</li>
+                    <li><code>playsinline</code> – odtwarzanie wideo w linii, bez trybu pełnoekranowego na urządzeniach mobilnych.</li>
+                    <li><code>poster</code> – obraz pokazany przed rozpoczęciem odtwarzania wideo.</li>
+                    <li><code>preload</code> – steruje wstępnym ładowaniem audio/wideo: <code>auto</code>, <code>metadata</code>, <code>none</code>.</li>
+                    <li><code>type</code> w <code>&lt;source&gt;</code> – typ pliku, np. <code>audio/mpeg</code> lub <code>video/webm</code>.</li>
+                </ul>
+                <h2>Kiedy używać <code>&lt;iframe&gt;</code>, <code>&lt;embed&gt;</code> i <code>&lt;object&gt;</code>?</h2>
+                <ul>
+                    <li><strong>&lt;iframe&gt;</strong> – najlepiej do osadzania innych stron lub zewnętrznych odtwarzaczy (np. YouTube).</li>
+                    <li><strong>&lt;embed&gt;</strong> – do osadzania zawartości zewnętrznej, np. dokumentów lub wtyczek.</li>
+                    <li><strong>&lt;object&gt;</strong> – bardziej ogólny kontener dla multimediów, który może mieć dodatkowy HTML zastępczy.</li>
+                </ul>
+                <h2>Napisy i dostępność</h2>
+                <p>
+                    Element <code>&lt;track&gt;</code> dodaje napisy, transkrypcję lub opisy audio do wideo. Atrybuty <code>kind</code>, <code>srclang</code>, <code>label</code> i <code>default</code> są ważne dla użytkowników.
+                </p>
+                <ul>
+                    <li><code>kind="captions"</code> – napisy do dialogów.</li>
+                    <li><code>kind="subtitles"</code> – napisy w innym języku.</li>
+                    <li><code>kind="descriptions"</code> – opisy dźwiękowe dla niewidomych.</li>
+                    <li><code>kind="metadata"</code> – dane pomocnicze.</li>
+                </ul>
+                <h2>Formaty plików</h2>
+                <p>
+                    Dobrą praktyką jest podawanie wielu formatów plików, bo każda przeglądarka obsługuje inne kodeki.
+                </p>
+                <ul>
+                    <li>Obrazy: <code>jpg/jpeg</code>, <code>png</code>, <code>webp</code>, <code>svg</code>.</li>
+                    <li>Dźwięk: <code>mp3</code>, <code>ogg</code>, <code>wav</code>.</li>
+                    <li>Wideo: <code>mp4</code>, <code>webm</code>, <code>ogg</code>.</li>
+                </ul>
+                <h2>Ważne uwagi</h2>
+                <ul>
+                    <li>Zawsze stosuj <code>alt</code> dla obrazów i tekst zastępczy, jeśli zawartość multimedialna jest istotna.</li>
+                    <li>Nie nadużywaj <code>autoplay</code>; może to być irytujące i nie zawsze działa na urządzeniach mobilnych.</li>
+                    <li>Używaj <code>controls</code>, aby użytkownik mógł zatrzymać lub przewinąć odtwarzanie.</li>
+                    <li>Pamiętaj o rozmiarach i adaptacji multimediów do ekranu: obrazy i wideo powinny być responsywne.</li>
+                </ul>
+            </article>
+        </main>
+        <footer id="footer">
+            &copy; Hubert Filas 2026 &ndash; Samouczek HTML i CSS<br>
+            Źródła: Własne
+        </footer>
+        <script src="../../script.js"></script>
+        <!-- Highlight.js -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+        <script>
+            hljs.highlightAll();
+        </script>
+    </body>
+</html>

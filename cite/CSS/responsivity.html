@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pl">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Samouczek CSS</title>
+        <link rel="icon" type="image/x-icon" href="../../img/Logo.png">
+        <link rel="stylesheet" href="../../style.css">
+        <style>
+            :root {
+                --MainColor: #1572B6;
+                --SideColor: #125d92;
+                --DarkColor: #0b3a5c;
+            }
+
+            .t {
+                color: black;
+            }
+        </style>
+        <script>let type = 0;</script>
+        <!-- Highlight.js Theme -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
+    </head>
+    <body>
+        <header id="header">
+            <ul>
+                <li><a onclick="openMP('../../index.html')" href="#">Strona Główna</a></li>
+                <li><a onclick="openHTML('../HTML/html-intro.html')" href="#">HTML</a></li>
+                <li><a href="#">CSS</a></li>
+            </ul>
+        </header>
+        <main>
+            <nav id="nav">
+                <ul id="subpages">
+                </ul>
+            </nav>
+            <article id="article">
+                <a onclick="showNav()" id="shownavbutton" href="#" style="color: white; background-color: var(--SideColor); padding: 10px; position: fixed; left: 0; border-radius: 0 10px 10px 0;">&gt;</a>
+                <!-- Artykuł poniżej -->
+
+                <h1>Responsywność</h1>
+                <p>
+                    Responsywność to tworzenie stron, które dobrze wyglądają i działają na różnych urządzeniach. Polega na dopasowaniu wyglądu do szerokości ekranu, rozdzielczości i orientacji ekranu.
+                </p>
+                <h2>Podstawowe zasady</h2>
+                <ul>
+                    <li>Używaj elastycznych jednostek, takich jak <code>%, em, rem</code> i <code>vw/vh</code>.</li>
+                    <li>Unikaj stałych szerokości, gdy możliwe jest użycie <code>max-width</code> i kontenerów płynnych.</li>
+                    <li>Stosuj <code>media queries</code>, aby zmieniać styl przy określonych szerokościach ekranu.</li>
+                    <li>Projektuj mobile-first: zaczynaj od małych ekranów i dodawaj zmiany dla większych.</li>
+                </ul>
+                <div class="example-grid">
+                    <div class="example-box example-code">
+                        <h3>Kod</h3>
+                        <pre><code class="language-css">.box {
+  width: 100%;
+  max-width: 600px;
+  padding: 1rem;
+  border: 1px solid #333;
+}
+
+@media (min-width: 800px) {
+  .box {
+    max-width: 800px;
+    background: #eef;
+  }
+}
+
+@media (max-width: 500px) {
+  .box {
+    padding: 0.5rem;
+    font-size: 0.9rem;
+  }
+}</code></pre>
+                    </div>
+                    <div class="example-box example-result t" style="padding:1rem; background:#f7f7f7; border:1px solid #ccc;">
+                        <h3>Wynik</h3>
+                        <div style="width:100%; max-width:600px; padding:1rem; border:1px solid #333; background:#eef; color:#111;">
+                            <p style="margin:0 0 0.75rem 0;">To jest pudełko responsywne. Na małych ekranach dopasowuje się do szerokości i zmniejsza odstępy.</p>
+                            <p style="margin:0;">Gdy szerokość ekranu rośnie, kontener może być szerszy, a treść pozostaje czytelna.</p>
+                        </div>
+                    </div>
+                </div>
+                <h2>Media queries</h2>
+                <p>
+                    Media query pozwala zmienić reguły CSS w zależności od rozmiaru ekranu. Najczęściej używane są punkty przerwania dla telefonów, tabletów i komputerów.</p>
+                <h2>Przykładowe punkty przerwania</h2>
+                <ul>
+                    <li><code>@media (max-width: 600px)</code> &ndash; smartfony.</li>
+                    <li><code>@media (min-width: 600px) and (max-width: 900px)</code> &ndash; tablety.</li>
+                    <li><code>@media (min-width: 900px)</code> &ndash; większe ekrany i desktopy.</li>
+                </ul>
+                <p>
+                    Responsywna strona to nie tylko wygląd. To także większa wygoda dla użytkowników i lepsze działanie na urządzeniach mobilnych.
+                </p>
+            </article>
+        </main>
+        <footer id="footer">
+            &copy; Hubert Filas 2026 &ndash; Samouczek HTML i CSS<br>
+            Źródła: Własne
+        </footer>
+        <script src="../../script.js"></script>
+        <!-- Highlight.js -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+        <script>
+            hljs.highlightAll();
+        </script>
+    </body>
+</html>

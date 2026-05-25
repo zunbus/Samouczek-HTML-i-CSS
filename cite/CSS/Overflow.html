@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pl">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Samouczek CSS</title>
+        <link rel="icon" type="image/x-icon" href="../../img/Logo.png">
+        <link rel="stylesheet" href="../../style.css">
+        <style>
+            :root {
+                --MainColor: #1572B6;
+                --SideColor: #125d92;
+                --DarkColor: #0b3a5c;
+            }
+
+            .t {
+                color: black;
+            }
+        </style>
+        <script>let type = 0;</script>
+        <!-- Highlight.js Theme -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
+    </head>
+    <body>
+        <header id="header">
+            <ul>
+                <li><a onclick="openMP('../../index.html')" href="#">Strona Główna</a></li>
+                <li><a onclick="openHTML('../HTML/html-intro.html')" href="#">HTML</a></li>
+                <li><a href="#">CSS</a></li>
+            </ul>
+        </header>
+        <main>
+            <nav id="nav">
+                <ul id="subpages">
+                </ul>
+            </nav>
+            <article id="article">
+                <a onclick="showNav()" id="shownavbutton" href="#" style="color: white; background-color: var(--SideColor); padding: 10px; position: fixed; left: 0; border-radius: 0 10px 10px 0;">&gt;</a>
+                <!-- Artykuł poniżej -->
+
+                <h1>Overflow</h1>
+                <p>
+                    Właściwość <code>overflow</code> kontroluje, co dzieje się z zawartością, która nie mieści się w wymiarach elementu. To ważne przy tworzeniu pudełek z przewijaniem, kart i kontenerów z ograniczoną wysokością.
+                </p>
+                <h2>Możliwe wartości</h2>
+                <ul>
+                    <li class="t"><strong>visible</strong> &ndash; domyślna wartość, zawartość wyjdzie poza pudełko.</li>
+                    <li class="t"><strong>hidden</strong> &ndash; nadmiar treści jest ukrywany.</li>
+                    <li class="t"><strong>scroll</strong> &ndash; zawsze pojawiają się paski przewijania.</li>
+                    <li class="t"><strong>auto</strong> &ndash; paski przewijania pojawiają się tylko wtedy, gdy są potrzebne.</li>
+                </ul>
+                <div class="example-grid">
+                    <div class="example-box example-code">
+                        <h3>Kod</h3>
+                        <pre><code class="language-html">&lt;div style="width:220px; height:120px; border:1px solid #333; padding:0.75rem; overflow:hidden;"&gt;
+  &lt;p&gt;Overflow hidden: nadmiar tekstu zostaje ukryty, bez pasków przewijania.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div style="width:220px; height:120px; border:1px solid #333; padding:0.75rem; overflow:scroll; margin-top:1rem;"&gt;
+  &lt;p&gt;Overflow scroll: zawsze widoczne paski przewijania.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div style="width:220px; height:120px; border:1px solid #333; padding:0.75rem; overflow:auto; margin-top:1rem;"&gt;
+  &lt;p&gt;Overflow auto: paski przewijania pojawiają się, gdy zawartość wychodzi poza obszar.&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+                    </div>
+                    <div class="example-box example-result t" style="padding:1rem; background:#f7f7f7; border:1px solid #ccc;">
+                        <h3>Wynik</h3>
+                        <div style="width:220px; height:2cm; border:1px solid #333; padding:0.75rem; overflow:hidden; background:#fff; margin-bottom:1rem;">
+                            <p style="margin:0;">Overflow hidden: nadmiar tekstu zostaje ukryty, bez pasków przewijania. Ten tekst jest dłuższy niż kontener, więc część z niego nie będzie widoczna.</p>
+                        </div>
+                        <div style="width:220px; border:1px solid #333; padding:0.75rem; overflow:scroll; background:#fff; margin-bottom:1rem; height: 2cm;">
+                            <p style="margin:0;">Overflow scroll: zawsze widoczne paski przewijania. Ten tekst jest dłuższy niż kontener, więc obszar można przewijać.</p>
+                        </div>
+                        <div style="width:220px; height:2cm; border:1px solid #333; padding:0.75rem; overflow:auto; background:#fff;">
+                            <p style="margin:0;">Overflow auto: paski przewijania pojawiają się tylko wtedy, gdy zawartość nie mieści się w obszarze. Ten tekst jest dłuższy niż kontener, więc przewijanie jest potrzebne.</p>
+                        </div>
+                    </div>
+                </div>
+                <h2>Praktyczne użycie</h2>
+                <p>
+                    Najczęściej <code>overflow</code> stosuje się do kart z ograniczoną wysokością, przycisków powrotu do góry lub w układach, gdzie trzeba zachować stałe wymiary elementu.
+                </p>
+                <h2>Warianty</h2>
+                <ul>
+                    <li class="t"><code>overflow-x</code> &ndash; kontroluje przelewanie w poziomie.</li>
+                    <li class="t"><code>overflow-y</code> &ndash; kontroluje przelewanie w pionie.</li>
+                    <li class="t"><code>overflow: hidden</code> jest często używane z <code>text-overflow: ellipsis</code> do skracania tekstu w jednej linii.</li>
+                </ul>
+                <p>
+                    Pamiętaj, że <code>overflow</code> działa tylko wtedy, gdy element ma określone wymiary lub gdy jego zawartość przekracza dostępny obszar.
+                </p>
+            </article>
+        </main>
+        <footer id="footer">
+            &copy; Hubert Filas 2026 &ndash; Samouczek HTML i CSS<br>
+            Źródła: Własne
+        </footer>
+        <script src="../../script.js"></script>
+        <!-- Highlight.js -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+        <script>
+            hljs.highlightAll();
+        </script>
+    </body>
+</html>

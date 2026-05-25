@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="pl">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Samouczek HTML</title>
+        <link rel="icon" type="image/x-icon" href="../../img/Logo.png">
+        <link rel="stylesheet" href="../../style.css">
+        <style>
+            :root {
+                --MainColor: #E34F26;
+                --SideColor: #a73a1b;
+                --DarkColor: #772914;
+            }
+            .t {
+                color: black;
+            }
+            
+        </style>
+        <!-- Highlight.js Theme -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
+        <script>let type = 1;</script>
+    </head>
+    <body>
+        <header id="header">
+            <ul>
+                <li><a onclick="openMP('../../index.html')" href="#">Strona Główna</a></li>
+                <li><a href="#">HTML</a></li>
+                <li><a onclick="openCSS('../CSS/css-intro.html')" href="#">CSS</a></li>
+            </ul>
+        </header>
+        <main>
+            <nav id="nav">
+                <ul id="subpages">
+                </ul>
+            </nav>
+            <article id="article">
+                <a onclick="showNav()" id="shownavbutton" href="#" style="color: white; background-color: var(--SideColor); padding: 10px; position: fixed; left: 0; border-radius: 0 10px 10px 0;">&gt;</a>
+                <!-- Artykuł poniżej -->
+
+                <h1>Formularze</h1>
+                <p>
+                    Formularze w HTML służą do zbierania danych od użytkowników. Umożliwiają wpisanie tekstu, wybór opcji, przesłanie plików, zaznaczenie pól oraz wysłanie danych na serwer.
+                </p>
+                <h2>Najważniejsze elementy</h2>
+                <ul>
+                    <li class="t"><strong>&lt;form&gt;</strong> &ndash; kontener dla pól formularza.</li>
+                    <li class="t"><strong>&lt;input&gt;</strong> &ndash; uniwersalne pole do wprowadzania danych.</li>
+                    <li class="t"><strong>&lt;label&gt;</strong> &ndash; etykieta powiązana z polem.</li>
+                    <li class="t"><strong>&lt;textarea&gt;</strong> &ndash; wielowierszowe pole tekstowe.</li>
+                    <li class="t"><strong>&lt;select&gt;</strong> i <strong>&lt;option&gt;</strong> &ndash; rozwijana lista wyboru.</li>
+                    <li class="t"><strong>&lt;button&gt;</strong> &ndash; przycisk wysyłający lub resetujący formularz.</li>
+                </ul>
+                <div class="example-grid">
+                    <div class="example-box example-code">
+                        <h3>Kod</h3>
+                        <pre><code class="language-html">&lt;form action="/submit" method="post"&gt;
+  &lt;label for="name"&gt;Imię:&lt;/label&gt;
+  &lt;input type="text" id="name" name="name" value="Jan" /&gt;
+
+  &lt;label for="email"&gt;Email:&lt;/label&gt;
+  &lt;input type="email" id="email" name="email" placeholder="jan@example.com" /&gt;
+
+  &lt;label for="message"&gt;Wiadomość:&lt;/label&gt;
+  &lt;textarea id="message" name="message" rows="4"&gt;Wpisz swoją wiadomość...&lt;/textarea&gt;
+
+  &lt;label for="topic"&gt;Temat:&lt;/label&gt;
+  &lt;select id="topic" name="topic"&gt;
+    &lt;option value="pytanie"&gt;Pytanie&lt;/option&gt;
+    &lt;option value="uwaga"&gt;Uwaga&lt;/option&gt;
+    &lt;option value="inne"&gt;Inne&lt;/option&gt;
+  &lt;/select&gt;
+
+  &lt;button type="submit"&gt;Wyślij&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+                    </div>
+                    <div class="example-box example-result t" style="padding:1rem; background:#f7f7f7; border:1px solid #ccc;">
+                        <h3>Wynik</h3>
+                        <form style="display:grid; gap:0.75rem; max-width:320px; font-family:Arial, sans-serif; color:#111;">
+                            <label for="name" style="display:block; font-weight:700;color: black;">Imię:</label>
+                            <input id="name" name="name" type="text" value="Jan" style="width:100%; padding:0.5rem; border:1px solid #999;color: black;" />
+
+                            <label for="email" style="display:block; font-weight:700;color: black;">Email:</label>
+                            <input id="email" name="email" type="email" placeholder="jan@example.com" style="width:100%; padding:0.5rem; border:1px solid #999;color: black;" />
+
+                            <label for="message" style="display:block; font-weight:700;color: black;">Wiadomość:</label>
+                            <textarea id="message" name="message" rows="4" style="width:100%; padding:0.5rem; border:1px solid #999;color: black;">Wpisz swoją wiadomość...</textarea>
+
+                            <label for="topic" style="display:block; font-weight:700;color: black;">Temat:</label>
+                            <select id="topic" name="topic" style="width:100%; padding:0.5rem; border:1px solid #999;color: black;">
+                                <option value="pytanie" style="color: black;">Pytanie</option>
+                                <option value="uwaga" style="color: black;">Uwaga</option>
+                                <option value="inne" style="color: black;">Inne</option>
+                            </select>
+
+                            <button type="submit" style="padding:0.75rem 1rem; background:#E34F26; color:white; border:none; cursor:pointer;">Wyślij</button>
+                        </form>
+                    </div>
+                </div>
+                <h2>Typy <code>input</code></h2>
+                <ul>
+                    <li class="t"><code>text</code> &ndash; podstawowe pole tekstowe do krótkich wpisów.</li>
+                    <li class="t"><code>password</code> &ndash; pole tekstowe, które ukrywa wpisywane znaki.</li>
+                    <li class="t"><code>email</code> &ndash; pole dla adresu e-mail; przeglądarka może sprawdzać jego format.</li>
+                    <li class="t"><code>tel</code> &ndash; pole dla numeru telefonu; może otworzyć klawiaturę numeryczną na urządzeniach mobilnych.</li>
+                    <li class="t"><code>url</code> &ndash; pole dla adresu URL; przeglądarka może sprawdzać poprawność protokołu.</li>
+                    <li class="t"><code>search</code> &ndash; pole wyszukiwania; zwykle ma dodatkowy styl lub ikonę w przeglądarce.</li>
+                    <li class="t"><code>number</code> &ndash; pole liczbowe z przyciskami zwiększania/zmniejszania.</li>
+                    <li class="t"><code>range</code> &ndash; suwak do wyboru wartości w określonym zakresie.</li>
+                    <li class="t"><code>color</code> &ndash; pole wyboru koloru z paletą lub pipetą.</li>
+                    <li class="t"><code>date</code> &ndash; wybór daty w formacie lokalnym.</li>
+                    <li class="t"><code>time</code> &ndash; wybór godziny.</li>
+                    <li class="t"><code>datetime-local</code> &ndash; wybór daty i godziny bez strefy czasowej.</li>
+                    <li class="t"><code>month</code> &ndash; wybór miesiąca i roku.</li>
+                    <li class="t"><code>week</code> &ndash; wybór tygodnia w roku.</li>
+                    <li class="t"><code>file</code> &ndash; pole do przesyłania plików; pozwala wybrać jedną lub wiele pozycji.</li>
+                    <li class="t"><code>checkbox</code> &ndash; pole wyboru; użytkownik może je zaznaczyć lub odznaczyć.</li>
+                    <li class="t"><code>radio</code> &ndash; przycisk radiowy; w grupie tylko jedna opcja może być zaznaczona.</li>
+                    <li class="t"><code>button</code> &ndash; zwykły przycisk o niestandardowym działaniu (nie wysyła formularza).</li>
+                    <li class="t"><code>submit</code> &ndash; przycisk wysyłający formularz.</li>
+                    <li class="t"><code>reset</code> &ndash; przycisk resetujący wszystkie pola do wartości początkowych.</li>
+                    <li class="t"><code>image</code> &ndash; przycisk graficzny; działa jak <code>submit</code>, ale wyświetla obrazek.</li>
+                    <li class="t"><code>hidden</code> &ndash; niewidoczne pole, które przesyła dane bez pokazywania ich użytkownikowi.</li>
+                </ul>
+                <p class="t">
+                    Element <code>&lt;datalist&gt;</code> pozwala podać listę propozycji dla pola tekstowego. Używa się go razem z <code>list="id"</code> w <code>&lt;input&gt;</code>, aby przeglądarka mogła podpowiadać wartości użytkownikowi.
+                </p>
+                <h2>Atrybuty formularza i jego pól</h2>
+                <ul>
+                    <li class="t"><strong>&lt;form&gt;</strong>:
+                        <ul>
+                            <li><code>action</code> &ndash; adres URL, na który wysyłane są dane formularza.</li>
+                            <li><code>method</code> &ndash; metoda HTTP: <code>get</code> lub <code>post</code>.</li>
+                            <li><code>enctype</code> &ndash; sposób kodowania danych, np. <code>multipart/form-data</code> przy wysyłaniu plików.</li>
+                            <li><code>autocomplete</code> &ndash; włącza lub wyłącza automatyczne uzupełnianie pól.</li>
+                            <li><code>target</code> &ndash; gdzie otworzyć wynik, np. <code>_blank</code> lub <code>_self</code>.</li>
+                            <li><code>novalidate</code> &ndash; wyłącza wbudowaną walidację przeglądarki.</li>
+                            <li><code>name</code> / <code>id</code> &ndash; identyfikatory formularza dla JS i powiązań z etykietami.</li>
+                            <li><code>accept-charset</code> &ndash; kodowanie znaków wysyłanych danych, np. <code>UTF-8</code>.</li>
+                        </ul>
+                    </li>
+                    <li class="t"><strong>&lt;input&gt;</strong>:
+                        <ul>
+                            <li><code>type</code> &ndash; określa rodzaj pola, np. <code>text</code>, <code>email</code>, <code>checkbox</code>.</li>
+                            <li><code>name</code> / <code>id</code> &ndash; identyfikator pola i nazwa danych wysyłanych do serwera.</li>
+                            <li><code>value</code> &ndash; wartość pola, która jest przesyłana wraz z formularzem.</li>
+                            <li><code>placeholder</code> &ndash; podpowiedź widoczna w pustym polu.</li>
+                            <li><code>required</code> &ndash; pole musi być wypełnione przed wysłaniem.</li>
+                            <li><code>readonly</code> &ndash; pole tylko do odczytu, bez możliwości edycji.</li>
+                            <li><code>disabled</code> &ndash; pole wyłączone, nieaktywne i nie przesyła danych.</li>
+                            <li><code>checked</code> &ndash; domyślnie zaznaczone pole typu checkbox lub radio.</li>
+                            <li><code>maxlength</code> / <code>minlength</code> &ndash; ograniczenie długości tekstu.</li>
+                            <li><code>min</code> / <code>max</code> / <code>step</code> &ndash; zakres wartości i krok dla typów liczbowych.</li>
+                            <li><code>pattern</code> &ndash; wyrażenie regularne do sprawdzania poprawności wartości.</li>
+                            <li><code>autocomplete</code> &ndash; pozwala przeglądarce uzupełniać pole na podstawie historii.</li>
+                            <li><code>multiple</code> &ndash; pozwala wybrać wiele wartości, np. w polu plików.</li>
+                            <li><code>accept</code> &ndash; określa dopuszczalne typy plików w polu <code>file</code>.</li>
+                            <li><code>size</code> &ndash; szerokość pola w znakach dla typów tekstowych.</li>
+                            <li><code>title</code> &ndash; pomocniczy tekst wyświetlany jako podpowiedź.</li>
+                        </ul>
+                    </li>
+                    <li class="t"><strong>&lt;label&gt;</strong>:
+                        <ul>
+                            <li><code>for</code> &ndash; wiąże etykietę z polem o podanym <code>id</code>.</li>
+                            <li><code>form</code> &ndash; przypisuje etykietę do formularza, gdy jest poza nim.</li>
+                        </ul>
+                    </li>
+                    <li class="t"><strong>&lt;textarea&gt;</strong>:
+                        <ul>
+                            <li><code>name</code> / <code>id</code> &ndash; identyfikator i nazwa przesyłanej wartości.</li>
+                            <li><code>rows</code> / <code>cols</code> &ndash; liczba wierszy i kolumn widocznych w polu.</li>
+                            <li><code>placeholder</code> &ndash; podpowiedź w pustym polu.</li>
+                            <li><code>required</code> / <code>readonly</code> / <code>disabled</code> &ndash; kontrola dostępności i edycji.</li>
+                            <li><code>maxlength</code> / <code>minlength</code> &ndash; ograniczenia długości wprowadzanego tekstu.</li>
+                            <li><code>wrap</code> &ndash; określa, jak tekst jest zawijany w polu.</li>
+                        </ul>
+                    </li>
+                    <li class="t"><strong>&lt;select&gt;</strong>:
+                        <ul>
+                            <li><code>name</code> / <code>id</code> &ndash; identyfikator listy i nazwa wartości.</li>
+                            <li><code>multiple</code> &ndash; pozwala zaznaczyć wiele opcji naraz.</li>
+                            <li><code>size</code> &ndash; liczba widocznych opcji bez przewijania.</li>
+                            <li><code>required</code> / <code>disabled</code> &ndash; wymusza wybór lub blokuje listę.</li>
+                        </ul>
+                    </li>
+                    <li class="t"><strong>&lt;option&gt;</strong>:
+                        <ul>
+                            <li><code>value</code> &ndash; wysyłana wartość opcji.</li>
+                            <li><code>selected</code> &ndash; opcja wybrana domyślnie.</li>
+                            <li><code>disabled</code> &ndash; opcja nieaktywna i niewybieralna.</li>
+                            <li><code>label</code> &ndash; skrócona etykieta opcji.</li>
+                        </ul>
+                    </li>
+                    <li class="t"><strong>&lt;button&gt;</strong>:
+                        <ul>
+                            <li><code>type</code> &ndash; zachowanie przycisku: <code>submit</code>, <code>reset</code> lub <code>button</code>.</li>
+                            <li><code>name</code> / <code>value</code> &ndash; dane przesyłane, gdy przycisk jest użyty.</li>
+                            <li><code>disabled</code> &ndash; przycisk nieaktywny.</li>
+                            <li><code>form</code> &ndash; powiązuje przycisk z formularzem poza jego strukturą.</li>
+                            <li><code>autofocus</code> &ndash; ustawia fokus na przycisku po załadowaniu strony.</li>
+                        </ul>
+                    </li>
+                    <li class="t"><strong>&lt;fieldset&gt;</strong>:
+                        <ul>
+                            <li><code>disabled</code> &ndash; wszystkie pola wewnątrz są wyłączone.</li>
+                            <li><code>form</code> &ndash; przypisuje fieldset do formularza poza nim.</li>
+                            <li><code>name</code> &ndash; nazwa grupy do referencji w skryptach.</li>
+                        </ul>
+                    </li>
+                    <li class="t"><strong>&lt;legend&gt;</strong> &ndash; opisuje grupę pól w <code>&lt;fieldset&gt;</code>, nie ma dodatkowych specjalnych atrybutów poza globalnymi.</li>
+                </ul>
+                <h2>Dobre praktyki</h2>
+                <ul>
+                    <li class="t">Używaj <code>&lt;label&gt;</code> dla lepszej dostępności i nawigacji.</li>
+                    <li class="t">Dodawaj <code>name</code> do pól, żeby serwer otrzymał dane.</li>
+                    <li class="t">Dodaj atrybuty <code>required</code>, <code>placeholder</code> i <code>type</code> tam, gdzie to możliwe.</li>
+                    <li class="t">Wstawiaj <code>action</code> i <code>method</code> w formularzu.</li>
+                </ul>
+                <p>
+                    Formularze są kluczowe w każdej stronie interaktywnej. Nawet proste pola i dobre etykiety poprawiają komfort użytkownika.
+                </p>
+            </article>
+        </main>
+        <footer id="footer">
+            &copy; Hubert Filas 2026 &ndash; Samouczek HTML i CSS<br>
+            Źródła: Własne
+        </footer>
+        <script src="../../script.js"></script>
+        <!-- Highlight.js -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+        <script>
+            hljs.highlightAll();
+        </script>
+    </body>
+</html>

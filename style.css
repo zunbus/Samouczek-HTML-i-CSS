@@ -40,6 +40,7 @@ nav {
   background-color: var(--SideColor);
   width: 10%;
   overflow-y: auto;
+  margin-bottom: 2cm;
 }
 
 nav ul {
@@ -55,6 +56,7 @@ nav ul li {
 }
 nav ul li:hover {
   background-color: var(--DarkColor);
+  transform: scaley(1.2);
 }
 
 nav ul li a {
@@ -189,10 +191,13 @@ hr {
 
 code {
   color: black;
+  font-family: monospace;
 }
 
 pre code {
   color: initial;
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
 }
 
 .language-html {
@@ -234,6 +239,10 @@ pre code {
 }
 .emphasized {
   font-style: italic;
+}
+
+article ul li {
+  color: black;
 }
 
 @media screen and (max-width: 768px) {

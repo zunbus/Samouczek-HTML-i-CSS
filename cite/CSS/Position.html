@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pl">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Samouczek CSS</title>
+        <link rel="icon" type="image/x-icon" href="../../img/Logo.png">
+        <link rel="stylesheet" href="../../style.css">
+        <style>
+            :root {
+                --MainColor: #1572B6;
+                --SideColor: #125d92;
+                --DarkColor: #0b3a5c;
+            }
+
+            .t {
+                color: black;
+            }
+        </style>
+        <script>let type = 0;</script>
+        <!-- Highlight.js Theme -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
+    </head>
+    <body>
+        <header id="header">
+            <ul>
+                <li><a onclick="openMP('../../index.html')" href="#">Strona Główna</a></li>
+                <li><a onclick="openHTML('../HTML/html-intro.html')" href="#">HTML</a></li>
+                <li><a href="#">CSS</a></li>
+            </ul>
+        </header>
+        <main>
+            <nav id="nav">
+                <ul id="subpages">
+                </ul>
+            </nav>
+            <article id="article">
+                <a onclick="showNav()" id="shownavbutton" href="#" style="color: white; background-color: var(--SideColor); padding: 10px; position: fixed; left: 0; border-radius: 0 10px 10px 0;">&gt;</a>
+                <!-- Artykuł poniżej -->
+
+                <h1>Pozycjonowanie w CSS</h1>
+                <p>
+                    Pozycjonowanie określa, jak element jest umieszczany w dokumencie. W CSS wyróżniamy pięć podstawowych wartości <code>position</code>: <code>static</code>, <code>relative</code>, <code>absolute</code>, <code>fixed</code> i <code>sticky</code>.
+                </p>
+                <h2>Wartości <code>position</code></h2>
+                <ul>
+                    <li class="t"><strong>static</strong> &ndash; domyślne pozycjonowanie, element układa się normalnie w dokumencie.</li>
+                    <li class="t"><strong>relative</strong> &ndash; element pozostaje w układzie dokumentu, ale można go przesunąć względem jego normalnej pozycji.</li>
+                    <li class="t"><strong>absolute</strong> &ndash; element jest pozycjonowany względem najbliższego przodka z inną pozycją niż <code>static</code>, lub względem dokumentu, jeśli takiego nie ma.</li>
+                    <li class="t"><strong>fixed</strong> &ndash; element jest przyklejony do widoku przeglądarki i nie przesuwa się podczas przewijania strony.</li>
+                    <li class="t"><strong>sticky</strong> &ndash; zaczyna jak <code>static</code>, a po przekroczeniu progu przykleja się do górnej lub dolnej krawędzi.</li>
+                </ul>
+                <div class="example-grid">
+                    <div class="example-box example-code">
+                        <h3>Kod</h3>
+                        <pre><code class="language-html">&lt;div class="box" style="position:relative; width:280px; height:180px; border:1px solid #333; padding:1rem;"&gt;
+  &lt;p&gt;Rodzic z <code>position: relative</code>.&lt;/p&gt;
+  &lt;div style="position:absolute; top:1rem; right:1rem; width:120px; padding:0.5rem; background:#ffd966; border:1px solid #cc9c00;"&gt;
+    Absolutnie pozycjonowany&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div style="position:fixed; top:1rem; left:1rem; width:160px; padding:0.75rem; background:#c9daf8; border:1px solid #6d9eeb;"&gt;Fixed: przyklejony nagłówek&lt;/div&gt;
+</code></pre>
+                    </div>
+                    <div class="example-box example-result t" style="padding:1rem; background:#f7f7f7; border:1px solid #ccc; min-height:280px; position:relative; overflow:hidden;">
+                        <h3>Wynik</h3>
+                        <div style="position:relative; width:280px; height:180px; border:1px solid #333; padding:1rem; background:#fff; margin-bottom:1rem;">
+                            <p style="margin:0 0 0.75rem 0;">Rodzic z <code>position: relative</code>.</p>
+                            <div style="position:absolute; top:2rem; right:1rem; width:120px; padding:0.5rem; background:#ffd966; border:1px solid #cc9c00;color: black;">Absolutnie pozycjonowany</div>
+                        </div>
+                        <div style="position:fixed; top:1rem; left:1rem; width:160px; padding:0.75rem; background:#c9daf8; border:1px solid #6d9eeb; z-index:10;color: black;">Fixed: nagłówek</div>
+                        <div style="margin-top:220px; color:#333;">
+                            <p style="margin:0 0 1rem 0; color: black;">Przykład statycznej przestrzeni pod fixed.</p>
+                            <div style="position:sticky; top:0; padding:0.75rem; background:#d9ead3; border:1px solid #6aa84f; color: black">Przykład sticky</div>
+                        </div>
+                    </div>
+                </div>
+                <h2>Pozycjonowanie względem rodzica</h2>
+                <p>
+                    Jeśli chcesz pozycjonować element względem jego rodzica pozycji, użyj <code>position: relative</code> na elemencie rodzica i <code>position: absolute</code> na pozycjonowanym elemencie, tak jak w przykładzie powyżej.</p>
+                <h2>Najczęstsze zastosowania</h2>
+                <ul>
+                    <li class="t"><code>relative</code> &ndash; drobne przesunięcia elementów lub punkt odniesienia dla pozycji absolutnej.</li>
+                    <li class="t"><code>absolute</code> &ndash; elementy wyciągnięte z normalnego przepływu, np. dymki, tooltipy, układ warstw.</li>
+                    <li class="t"><code>fixed</code> &ndash; pasek narzędzi, przycisk powrotu do góry, nagłówek widoczny podczas przewijania.</li>
+                    <li class="t"><code>sticky</code> &ndash; przylegające nagłówki sekcji lub boczne przyciski, które zostają przyklejone na krawędzi widoku.</li>
+                </ul>
+                <p>
+                    Pozycjonowanie jest podstawą bardziej zaawansowanych układów CSS. Warto łączyć je z <code>z-index</code> i modelami layoutu, takimi jak <code>flex</code> i <code>grid</code>.
+                </p>
+            </article>
+        </main>
+        <footer id="footer">
+            &copy; Hubert Filas 2026 &ndash; Samouczek HTML i CSS<br>
+            Źródła: Własne
+        </footer>
+        <script src="../../script.js"></script>
+        <!-- Highlight.js -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+        <script>
+            hljs.highlightAll();
+        </script>
+    </body>
+</html>
