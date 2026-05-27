@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="pl">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Samouczek CSS</title>
+        <link rel="icon" type="image/x-icon" href="../../img/Logo.png">
+        <link rel="stylesheet" href="../../style.css">
+        <style>
+            :root {
+                --MainColor: #1572B6;
+                --SideColor: #125d92;
+                --DarkColor: #0b3a5c;
+            }
+            .t {
+                color: black;
+            }
+            .a1 {
+                background-color: #0000;
+            }
+            .a1:hover{
+                background-color: #0000;
+            }
+            .dropdown-menu-demo,
+            .dropdown-menu-demo ul {
+                list-style: none;
+                margin: 0;
+                padding: 0;
+            }
+
+            .dropdown-menu-demo li {
+                position: relative;
+                width: 140px;
+            }
+
+            .dropdown-menu-demo a {
+                display: block;
+                padding: 10px;
+                text-decoration: none;
+                background: #c5ffb7;
+                border: 1px solid #97ff97;
+                color: black;
+            }
+
+            .dropdown-menu-demo ul {
+                display: none;
+                position: absolute;
+                left: 120px;
+                top: 0;
+            }
+
+            .dropdown-menu-demo ul a {
+                background: #97ff97;
+            }
+
+            .dropdown-menu-demo li:hover > ul {
+                display: block;
+            }
+        </style>
+        <script>let type = 0;</script>
+        <!-- Highlight.js Theme -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
+    </head>
+    <body>
+        <header id="header">
+            <ul>
+                <li><a onclick="openMP('../../index.html')" href="#">Strona Główna</a></li>
+                <li><a onclick="openHTML('../HTML/html-intro.html')" href="#">HTML</a></li>
+                <li><a href="#">CSS</a></li>
+            </ul>
+        </header>
+        <main>
+            <nav id="nav">
+                <ul id="subpages">
+                </ul>
+            </nav>
+            <article id="article">
+                <a onclick="showNav()" id="shownavbutton" href="#" style="color: white; background-color: var(--SideColor); padding: 10px; position: fixed; left: 0; border-radius: 0 10px 10px 0;">&gt;</a>
+                <!-- Artykuł poniżej -->
+
+                <h1>Menu rozwijalne</h1>
+
+                <p>
+                    Menu rozwijalne (dropdown menu) to rodzaj nawigacji, w której dodatkowe opcje pojawiają się po najechaniu kursorem lub kliknięciu na element główny. Tego typu menu pozwala zaoszczędzić miejsce i uporządkować większą liczbę linków.
+                </p>
+
+                <h2>Jak działa menu rozwijalne?</h2>
+
+                <p>
+                    Najczęściej wykorzystuje się zagnieżdżone listy <code>&lt;ul&gt;</code>. Główne elementy menu zawierają kolejne listy, które są ukrywane za pomocą CSS i wyświetlane dopiero po najechaniu na rodzica.
+                </p>
+
+                <div class="example-grid">
+                    <div class="example-box example-code">
+                        <h3>Kod</h3>
+<pre><code class="language-html">&lt;ul class="dropdown-menu"&gt;
+    &lt;li&gt;
+        &lt;a href="#"&gt;Pole 1&lt;/a&gt;
+        &lt;ul&gt;
+            &lt;li&gt;&lt;a href="#"&gt;Pole 1.1&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#"&gt;Pole 1.2&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/li&gt;
+
+    &lt;li&gt;
+        &lt;a href="#"&gt;Pole 2&lt;/a&gt;
+        &lt;ul&gt;
+            &lt;li&gt;&lt;a href="#"&gt;Pole 2.1&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#"&gt;Pole 2.2&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+<pre><code class="language-css">.dropdown-menu-demo,
+.dropdown-menu-demo ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.dropdown-menu-demo li {
+    position: relative;
+    width: 140px;
+}
+
+.dropdown-menu-demo a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    background: #c5ffb7;
+    border: 1px solid #97ff97;
+    color: black;
+}
+
+.dropdown-menu-demo ul {
+    display: none;
+    position: absolute;
+    left: 140px;
+    top: 0;
+}
+
+.dropdown-menu-demo ul a {
+    background: #97ff97;
+}
+
+.dropdown-menu-demo li:hover &gt; ul {
+    display: block;
+}</code></pre>
+                    </div>
+
+                    <div class="example-box example-result t" style="padding:1rem; background:#f7f7f7; border:1px solid #ccc;">
+                        <h3>Wynik</h3>
+
+                        <ul class="dropdown-menu-demo">
+                            <li>
+                                <a href="#" class="t">Pole 1</a>
+                                <ul>
+                                    <li style="position: relative; left: 0.5cm;"><a href="#" class="t" >Pole 1.1</a></li>
+                                    <li style="position:  relative; left: 0.5cm;"><a href="#" class="t">Pole 1.2</a></li>
+                                </ul>
+                            </li>
+
+                            <li>
+                                <a href="#" class="t">Pole 2</a>
+                                <ul>
+                                    <li style="position:  relative; left: 0.5cm;"><a href="#" class="t">Pole 2.1</a></li>
+                                    <li style="position:  relative; left: 0.5cm;"><a href="#" class="t">Pole 2.2</a></li>
+                                </ul>
+                            </li>
+
+                            <li>
+                                <a href="#" class="t">Pole 3</a>
+                                <ul>
+                                    <li style="position:  relative; left: 0.5cm;"><a href="#" class="t">Pole 3.1</a></li>
+                                    <li style="position:  relative; left: 0.5cm;"><a href="#" class="t">Pole 3.2</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h2>Zalety</h2>
+
+                <ul>
+                    <li class="t">Pozwala uporządkować dużą liczbę linków.</li>
+                    <li class="t">Oszczędza miejsce na stronie.</li>
+                    <li class="t">Ułatwia tworzenie wielopoziomowej nawigacji.</li>
+                </ul>
+
+                <h2>Wady</h2>
+
+                <ul>
+                    <li class="t">Na urządzeniach mobilnych hover może działać inaczej.</li>
+                    <li class="t">Zbyt rozbudowane menu może być trudne w obsłudze.</li>
+                    <li class="t">Niepoprawne pozycjonowanie może powodować nakładanie elementów.</li>
+                </ul>
+
+                <h2>Porady praktyczne</h2>
+
+                <ul>
+                    <li class="t">Stosuj krótkie i czytelne nazwy sekcji.</li>
+                    <li class="t">Dodaj efekty przejścia (<code>transition</code>) dla płynniejszej animacji.</li>
+                    <li class="t">Na urządzeniach mobilnych rozważ rozwijanie po kliknięciu zamiast hover.</li>
+                </ul>
+
+                <p>
+                    Menu rozwijalne jest jednym z najczęściej używanych elementów nawigacyjnych w nowoczesnych stronach internetowych. Dzięki HTML i CSS można stworzyć je bez użycia JavaScriptu.
+                </p>
+            </article>
+        </main>
+        <footer id="footer">
+            &copy; Hubert Filas 2026 &ndash; Samouczek HTML i CSS<br>
+            Źródła: Własne
+        </footer>
+        <script src="../../script.js"></script>
+        <!-- Highlight.js -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+        <script>
+            hljs.highlightAll();
+        </script>
+    </body>
+</html>

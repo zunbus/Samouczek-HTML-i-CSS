@@ -101,6 +101,14 @@ const CSSpages = [
   {
     title: "Animacje",
     link: "animations.html"
+  },
+  {
+    title: "Menu rozwijalne",
+    link: "dropdown.html"
+  },
+  {
+    title: "Dziedziczenie",
+    link: "inheritance.html"
   }
 ];
 
